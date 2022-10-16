@@ -8,10 +8,10 @@ export default function HeroView() {
   const { onOpen } = useHeroContext();
   return (
     <Flex w={"100vw"} minH="100vh" overflowX={"hidden"}>
-      <Flex display={{ lg: "none", xl: "inherit" }}>
+      <Flex display={{ base: "none", xl: "inherit" }}>
         <Sidebar />
       </Flex>
-      <Flex display={{ lg: "inherit", xl: "none" }}>
+      <Flex display={{ base: "inherit", xl: "none" }}>
         <FullNavMenu />
       </Flex>
       <Flex w="100%" h="100%" bgColor="background" direction={"column"}>
@@ -19,7 +19,7 @@ export default function HeroView() {
           w={"100%"}
           justifyContent="space-between"
           p={"10px"}
-          display={{ lg: "inherit", xl: "none" }}
+          display={{ base: "inherit", xl: "none" }}
         >
           <Flex />
           <Flex
