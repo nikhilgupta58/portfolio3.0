@@ -1,9 +1,22 @@
 import { CloseIcon } from "@chakra-ui/icons";
 import { Flex, Text, Image } from "@chakra-ui/react";
+import { motion } from "framer-motion";
+import React from "react";
 import { useHeroContext } from "../pages/Hero/utils/context";
 
 export default function FullNavMenu() {
   const { isOpen, onClose, socialMedia, Menu } = useHeroContext();
+  const [closeClick, setCloseClick] = React.useState(false);
+
+  React.useEffect(() => {
+    if (closeClick == true) {
+      setTimeout(() => {
+        onClose();
+        setCloseClick(false);
+      }, 200);
+    }
+  }, [closeClick]);
+
   return (
     <Flex
       width={"100vw"}
@@ -15,6 +28,15 @@ export default function FullNavMenu() {
       display={isOpen ? "inherit" : "none"}
       direction="column"
       justifyContent={"space-between"}
+      as={motion.div}
+      opacity="0"
+      animate={
+        closeClick
+          ? { opacity: 0, transition: { duration: 0.2 } }
+          : isOpen
+          ? { opacity: 1, transition: { duration: 0.2 } }
+          : {}
+      }
     >
       <Flex w={"100%"} bgColor={"#000000"} direction="column" pb={"20px"}>
         <Flex
@@ -32,7 +54,7 @@ export default function FullNavMenu() {
             fontSize="30px"
             borderRadius={"4px"}
             cursor="pointer"
-            onClick={() => onClose()}
+            onClick={() => setCloseClick(true)}
           >
             <CloseIcon />
           </Flex>
