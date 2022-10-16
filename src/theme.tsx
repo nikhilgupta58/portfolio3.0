@@ -20,6 +20,11 @@ const theme = extendTheme({
     th: `'Open Sans', sans-serif;`,
     input: `'Open Sans', sans-serif;`,
   },
+  colors: {
+    background: "#1d1d1d",
+    cyan: "#08FDD8",
+    brick: "#FD2155",
+  },
   config: {
     initialColorMode: "dark",
   },
