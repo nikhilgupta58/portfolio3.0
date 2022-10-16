@@ -19,11 +19,10 @@ export default function HeroView() {
           display={{ base: "inherit", xl: "none" }}
           w={"50px"}
           h="50px"
-          bgColor={"#000000"}
-          opacity="0.8"
+          bgColor={"rgba(0,0,0,0.3)"}
           justifyContent="center"
           alignItems={"center"}
-          fontSize="30px"
+          fontSize="40px"
           borderRadius={"4px"}
           cursor="pointer"
           position={"fixed"}
