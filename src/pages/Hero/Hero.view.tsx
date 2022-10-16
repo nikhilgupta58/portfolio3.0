@@ -16,27 +16,24 @@ export default function HeroView() {
       </Flex>
       <Flex w="100%" h="100%" bgColor="background" direction={"column"}>
         <Flex
-          w={"100%"}
-          justifyContent="space-between"
-          p={"10px"}
           display={{ base: "inherit", xl: "none" }}
+          w={"50px"}
+          h="50px"
+          bgColor={"#000000"}
+          opacity="0.8"
+          justifyContent="center"
+          alignItems={"center"}
+          fontSize="30px"
+          borderRadius={"4px"}
+          cursor="pointer"
+          position={"fixed"}
+          top="10px"
+          right={"10px"}
+          onClick={() => onOpen()}
         >
-          <Flex />
-          <Flex
-            w={"50px"}
-            h="50px"
-            bgColor={"#000000"}
-            justifyContent="center"
-            alignItems={"center"}
-            fontSize="30px"
-            borderRadius={"4px"}
-            cursor="pointer"
-            onClick={() => onOpen()}
-          >
-            <GiHamburgerMenu />
-          </Flex>
+          <GiHamburgerMenu />
         </Flex>
-        <Flex>Body</Flex>
+        <Flex w={"100%"}>Body</Flex>
       </Flex>
     </Flex>
   );
