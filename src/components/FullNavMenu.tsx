@@ -21,7 +21,7 @@ export default function FullNavMenu() {
     <Flex
       width={"100vw"}
       zIndex={100}
-      height="100vh"
+      minHeight="100vh"
       position={"fixed"}
       overflowY="scroll"
       overflowX={"hidden"}
