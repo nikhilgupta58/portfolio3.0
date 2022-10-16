@@ -4,6 +4,7 @@ import { HeroContext } from "./utils/context";
 import { RiLinkedinFill } from "react-icons/ri";
 import { IoLogoGithub } from "react-icons/io";
 import { SiHashnode } from "react-icons/si";
+import { useDisclosure } from "@chakra-ui/react";
 export default function HeroContainer() {
   const Menu = [
     {
@@ -36,8 +37,12 @@ export default function HeroContainer() {
       onClick: () => {},
     },
   ];
+  const { isOpen, onClose, onOpen } = useDisclosure();
+
   return (
-    <HeroContext.Provider value={{ Menu, socialMedia }}>
+    <HeroContext.Provider
+      value={{ Menu, socialMedia, isOpen, onClose, onOpen }}
+    >
       <HeroView />
     </HeroContext.Provider>
   );

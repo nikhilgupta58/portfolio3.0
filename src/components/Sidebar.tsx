@@ -31,7 +31,7 @@ export default function Sidebar() {
             fontSize={"27px"}
             margin="1px 0 0"
             fontFamily={`'Rubik', sans-serif;`}
-            fontWeight="500"
+            fontWeight="600"
           >
             Nikhil
           </Text>
@@ -71,6 +71,7 @@ export default function Sidebar() {
                     color: "cyan",
                     transition: "all 0.4s",
                   }}
+                  key={id}
                 >
                   <Text>{row.title}</Text>
                 </Flex>
@@ -93,6 +94,7 @@ export default function Sidebar() {
                       color: "cyan",
                       transition: "all 0.4s",
                     }}
+                    key={id}
                   >
                     <Logo />
                   </Flex>
