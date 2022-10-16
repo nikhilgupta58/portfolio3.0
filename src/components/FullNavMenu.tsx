@@ -3,7 +3,7 @@ import { Flex, Text, Image } from "@chakra-ui/react";
 import { useHeroContext } from "../pages/Hero/utils/context";
 
 export default function FullNavMenu() {
-  const { isOpen, onClose } = useHeroContext();
+  const { isOpen, onClose, socialMedia, Menu } = useHeroContext();
   return (
     <Flex
       width={"100vw"}
@@ -11,9 +11,10 @@ export default function FullNavMenu() {
       position={"fixed"}
       top="0"
       left={"0"}
-      bgColor="background"
+      bgColor="#181818"
       display={isOpen ? "inherit" : "none"}
       direction="column"
+      justifyContent={"space-between"}
     >
       <Flex w={"100%"} bgColor={"#000000"} direction="column" pb={"20px"}>
         <Flex
@@ -59,7 +60,63 @@ export default function FullNavMenu() {
           </Text>
         </Flex>
       </Flex>
-      <Flex />
+      <Flex
+        w="100%"
+        justifyContent="center"
+        color={"#909096"}
+        borderY={"1px solid #282828"}
+        direction={"column"}
+      >
+        {Menu.map((row: { title: string }, id: any) => {
+          return (
+            <Flex
+              justifyContent={"center"}
+              w="100%"
+              fontSize="16px"
+              lineHeight={"16px"}
+              py={"20px"}
+              borderBottom={"1px solid #282828"}
+              fontWeight="500"
+              color={row.title == "Blog" ? "cyan" : "inherit"}
+              transition="all 0.2s"
+              cursor={"pointer"}
+              _hover={{
+                color: "cyan",
+                transition: "all 0.4s",
+              }}
+              key={id}
+            >
+              <Text>{row.title}</Text>
+            </Flex>
+          );
+        })}
+      </Flex>
+      <Flex w={"100%"}>
+        <Flex w="100%" justifyContent={"center"}>
+          {socialMedia.map(
+            (row: { img: React.Component; onClick: () => void }, id: any) => {
+              const Logo: any = row.img;
+              return (
+                <Flex
+                  p="20px 7px"
+                  color={"#909096"}
+                  fontSize="18px"
+                  onClick={row.onClick}
+                  transition="all 0.2s"
+                  cursor={"pointer"}
+                  _hover={{
+                    color: "cyan",
+                    transition: "all 0.4s",
+                  }}
+                  key={id}
+                >
+                  <Logo />
+                </Flex>
+              );
+            }
+          )}
+        </Flex>
+      </Flex>
     </Flex>
   );
 }
