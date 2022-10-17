@@ -150,16 +150,23 @@ export default function Home() {
                           color: "cyan",
                           transition: "color 0.4s",
                         }}
+                        opacity="0"
                         animate={
                           textHoverId.row == ids && textHoverId.col == id
                             ? {
                                 transformOrigin: "center bottom",
                                 transform: "translateY(-10px)",
-                                transition:{
-                                  duration:0.1
-                                }
+                                opacity: 1,
+                                transition: {
+                                  duration: 0.1,
+                                },
                               }
-                            : {}
+                            : {
+                                opacity: 1,
+                                // transition: {
+                                //   delay: 0.5 * id,
+                                // },
+                              }
                         }
                       >
                         {col}
