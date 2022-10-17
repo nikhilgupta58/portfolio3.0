@@ -130,7 +130,12 @@ export default function Home() {
                         p="0"
                         key={id}
                         transform={
-                          ids == 2 ? { base: "translateY(-10px)" } : {}
+                          ids == 2
+                            ? {
+                                base: "translateY(-15px)",
+                                md: "translateY(-10px)",
+                              }
+                            : {}
                         }
                       >
                         {col}
