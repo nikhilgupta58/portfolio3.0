@@ -141,6 +141,7 @@ export default function Home() {
               );
             })}
           </Flex>
+          <Text ml={{ base: "10px", md: "20px" }}>{"</h1>"}</Text>
           <Text ml={{ base: "20px", md: "40px" }}>{"<p>"}</Text>
           <Text
             ml={{ base: "30px", md: "60px" }}
