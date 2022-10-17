@@ -7,8 +7,8 @@ export default function Sidebar() {
   return (
     <>
       <Flex
-        minW="145px"
-        maxW="145px"
+        minW="130px"
+        maxW="130px"
         bgColor={"#181818"}
         height="100vh"
         position="fixed"
@@ -104,7 +104,7 @@ export default function Sidebar() {
           </Flex>
         </Flex>
       </Flex>
-      <Flex minW="145px" maxW="145px" />
+      <Flex minW="130px" maxW="130px" />
     </>
   );
 }

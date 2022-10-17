@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import HeroView from "./Hero.view";
 import { HeroContext } from "./utils/context";
 import { RiLinkedinFill } from "react-icons/ri";
@@ -37,13 +37,45 @@ export default function HeroContainer() {
       onClick: () => {},
     },
   ];
+  const audioRef = useRef<any>(null);
+  const [playAudio, setPlayAudio] = React.useState(false);
   const { isOpen, onClose, onOpen } = useDisclosure();
+
+  const play = () => {
+    audioRef.current.play();
+  };
+
+  const stop = () => {
+    audioRef.current.pause();
+    audioRef.current.currentTime = 0;
+  };
+
+  React.useEffect(() => {
+    if (audioRef?.current) {
+      if (playAudio) play();
+      else stop();
+    }
+  }, [playAudio, audioRef]);
 
   return (
     <HeroContext.Provider
-      value={{ Menu, socialMedia, isOpen, onClose, onOpen }}
+      value={{
+        Menu,
+        socialMedia,
+        isOpen,
+        onClose,
+        onOpen,
+        playAudio,
+        setPlayAudio,
+      }}
     >
       <HeroView />
+      <audio
+        ref={audioRef}
+        src="/audio.mp3"
+        controls
+        style={{ display: "none" }}
+      />
     </HeroContext.Provider>
   );
 }
