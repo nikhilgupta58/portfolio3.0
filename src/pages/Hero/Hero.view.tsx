@@ -9,7 +9,7 @@ import { SiSoundcloud } from "react-icons/si";
 export default function HeroView() {
   const { onOpen, playAudio, setPlayAudio } = useHeroContext();
   return (
-    <Flex w={"100vw"} minH="100vh" overflowX={"hidden"}>
+    <Flex w={"100vw"} minH="100vh" overflowX={"hidden"} userSelect="none">
       <Flex display={{ base: "none", xl: "inherit" }}>
         <Sidebar />
       </Flex>

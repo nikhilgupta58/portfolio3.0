@@ -9,6 +9,7 @@ export default function Home() {
     ["I", "'", "m", " ", "Logo", "i", "k", "h", "i", "l", ","],
     ["w", "e", "b", " ", "d", "e", "v", "e", "l", "o", "p", "e", "r"],
   ];
+  const [textHoverId, setTextHoverId] = React.useState({ row: -1, col: -1 });
   return (
     <Flex
       w="100%"
@@ -134,6 +135,29 @@ export default function Home() {
                             ? {
                                 base: "translateY(-15px)",
                                 md: "translateY(-10px)",
+                              }
+                            : {}
+                        }
+                        onMouseOver={() => {
+                          setTextHoverId({ row: ids, col: id });
+                        }}
+                        onMouseOut={() => {
+                          setTextHoverId({ row: -1, col: -1 });
+                        }}
+                        transition="all 0.2s linear"
+                        as={motion.div}
+                        _hover={{
+                          color: "cyan",
+                          transition: "color 0.4s",
+                        }}
+                        animate={
+                          textHoverId.row == ids && textHoverId.col == id
+                            ? {
+                                transformOrigin: "center bottom",
+                                transform: "translateY(-10px)",
+                                transition:{
+                                  duration:0.1
+                                }
                               }
                             : {}
                         }
