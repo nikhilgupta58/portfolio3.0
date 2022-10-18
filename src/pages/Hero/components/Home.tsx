@@ -1,7 +1,8 @@
-import { Button, Flex, Image, Text } from "@chakra-ui/react";
+import { Flex, Image, Text } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import React from "react";
 import { BiDownArrowAlt } from "react-icons/bi";
+import CustomButton from "../../../components/CustomButton";
 
 export default function Home() {
   const text = [
@@ -233,17 +234,9 @@ export default function Home() {
               },
             }}
           >
-            <Button
-              ml={{ base: "30px", md: "60px" }}
-              color="#7B7D7D"
-              fontSize={"18px"}
-              letterSpacing={"0.1em"}
-              fontFamily={`'Rubik', sans-serif;`}
-              w="200px"
-              mt={"30px"}
-            >
-              Contact Me
-            </Button>
+            <CustomButton ml={{ base: "30px", md: "60px" }} mt={"30px"}>
+              Contact me!
+            </CustomButton>
           </Flex>
         </Flex>
         <Flex />
