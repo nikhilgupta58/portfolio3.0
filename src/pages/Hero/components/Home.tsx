@@ -148,7 +148,6 @@ export default function Home() {
                           ids == 2
                             ? {
                                 base: "translateY(-15px)",
-                                md: "translateY(-10px)",
                               }
                             : {}
                         }
@@ -169,7 +168,18 @@ export default function Home() {
                           textHoverId.row == ids && textHoverId.col == id
                             ? {
                                 transformOrigin: "center bottom",
-                                transform: "translateY(-10px)",
+                                transform:
+                                  ids == 2
+                                    ? [
+                                        "translateY(-15px)",
+                                        "translateY(-25px)",
+                                        "translateY(-15px)",
+                                      ]
+                                    : [
+                                        "translateY(0px)",
+                                        "translateY(-10px)",
+                                        "translateY(0px)",
+                                      ],
                                 opacity: 1,
                                 transition: {
                                   duration: 0.1,
