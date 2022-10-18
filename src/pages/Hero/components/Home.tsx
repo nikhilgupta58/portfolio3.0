@@ -172,12 +172,12 @@ export default function Home() {
                                   ids == 2
                                     ? [
                                         "translateY(-15px)",
-                                        "translateY(-25px)",
+                                        "translateY(-35px)",
                                         "translateY(-15px)",
                                       ]
                                     : [
                                         "translateY(0px)",
-                                        "translateY(-10px)",
+                                        "translateY(-20px)",
                                         "translateY(0px)",
                                       ],
                                 opacity: 1,
