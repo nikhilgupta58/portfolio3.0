@@ -26,15 +26,24 @@ export default function HeroContainer() {
   const socialMedia = [
     {
       img: RiLinkedinFill,
-      onClick: () => {},
+      onClick: () => {
+        window.open(
+          "https://www.linkedin.com/in/nikhil-kumar-gupta-827682b4/",
+          "_blank"
+        );
+      },
     },
     {
       img: IoLogoGithub,
-      onClick: () => {},
+      onClick: () => {
+        window.open("https://github.com/nikhilgupta58", "_blank");
+      },
     },
     {
       img: SiHashnode,
-      onClick: () => {},
+      onClick: () => {
+        window.open("https://nikhilkumargupta.hashnode.dev/", "_blank");
+      },
     },
   ];
   const audioRef = useRef<any>(null);

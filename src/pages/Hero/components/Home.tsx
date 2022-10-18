@@ -193,33 +193,58 @@ export default function Home() {
             })}
           </Flex>
           <Text ml={{ base: "10px", md: "20px" }}>{"</h1>"}</Text>
-          <Text ml={{ base: "20px", md: "40px" }}>{"<p>"}</Text>
-          <Text
-            ml={{ base: "30px", md: "60px" }}
-            color="#7B7D7D"
-            fontSize={{
-              base: "12px",
-              xs: "14px",
-              sm: "16px",
-              md: "18px",
+          <Flex
+            direction={"column"}
+            as={motion.div}
+            opacity="0"
+            animate={{
+              opacity: 1,
+              transform: ["translateY(20px)", "translateY(0px)"],
+              transition: {
+                delay: 2,
+              },
             }}
-            letterSpacing={"0.1em"}
-            fontFamily={`'Rubik', sans-serif;`}
           >
-            {"Front End Developer / Web Developer"}
-          </Text>
-          <Text ml={{ base: "20px", md: "40px" }}>{"</p>"}</Text>
-          <Button
-            ml={{ base: "30px", md: "60px" }}
-            color="#7B7D7D"
-            fontSize={"18px"}
-            letterSpacing={"0.1em"}
-            fontFamily={`'Rubik', sans-serif;`}
-            w="200px"
-            mt={"30px"}
+            <Text ml={{ base: "20px", md: "40px" }}>{"<p>"}</Text>
+            <Text
+              ml={{ base: "30px", md: "60px" }}
+              color="#7B7D7D"
+              fontSize={{
+                base: "12px",
+                xs: "14px",
+                sm: "16px",
+                md: "18px",
+              }}
+              letterSpacing={"0.1em"}
+              fontFamily={`'Rubik', sans-serif;`}
+            >
+              {"Front End Developer / Web Developer"}
+            </Text>
+            <Text ml={{ base: "20px", md: "40px" }}>{"</p>"}</Text>
+          </Flex>
+          <Flex
+            as={motion.div}
+            opacity="0"
+            animate={{
+              opacity: 1,
+              transform: ["translateY(20px)", "translateY(0px)"],
+              transition: {
+                delay: 2.5,
+              },
+            }}
           >
-            Contact Me
-          </Button>
+            <Button
+              ml={{ base: "30px", md: "60px" }}
+              color="#7B7D7D"
+              fontSize={"18px"}
+              letterSpacing={"0.1em"}
+              fontFamily={`'Rubik', sans-serif;`}
+              w="200px"
+              mt={"30px"}
+            >
+              Contact Me
+            </Button>
+          </Flex>
         </Flex>
         <Flex />
       </Flex>
