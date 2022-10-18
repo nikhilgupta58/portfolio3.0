@@ -176,11 +176,6 @@ export default function Home() {
                               }
                             : {
                                 opacity: 1,
-                                transform: [
-                                  "scale(1)",
-                                  "scale(1.4)",
-                                  "scale(1)",
-                                ],
                                 transition: {
                                   delay: 0.1 * count,
                                   type: "ease-in",
