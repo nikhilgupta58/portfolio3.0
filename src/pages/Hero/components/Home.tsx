@@ -10,6 +10,8 @@ export default function Home() {
     ["w", "e", "b", " ", "d", "e", "v", "e", "l", "o", "p", "e", "r"],
   ];
   const [textHoverId, setTextHoverId] = React.useState({ row: -1, col: -1 });
+  let count = 0;
+
   return (
     <Flex
       w="100%"
@@ -67,6 +69,7 @@ export default function Home() {
               return (
                 <Flex key={ids}>
                   {row.map((col, id) => {
+                    count += 1;
                     if (col == "Logo")
                       return (
                         <Flex
@@ -86,6 +89,16 @@ export default function Home() {
                             md: "5px",
                             lg: "5px",
                             xl: "5px",
+                          }}
+                          as={motion.div}
+                          opacity="0"
+                          animate={{
+                            opacity: 1,
+                            transition: {
+                              delay: 0.1 * count,
+                              type: "ease-in",
+                              duration: 0.2,
+                            },
                           }}
                         >
                           <Image
@@ -163,9 +176,16 @@ export default function Home() {
                               }
                             : {
                                 opacity: 1,
-                                // transition: {
-                                //   delay: 0.5 * id,
-                                // },
+                                transform: [
+                                  "scale(1)",
+                                  "scale(1.4)",
+                                  "scale(1)",
+                                ],
+                                transition: {
+                                  delay: 0.1 * count,
+                                  type: "ease-in",
+                                  duration: 0.2,
+                                },
                               }
                         }
                       >
