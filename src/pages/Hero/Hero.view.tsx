@@ -3,11 +3,11 @@ import Sidebar from "../../components/Sidebar";
 import { GiHamburgerMenu } from "react-icons/gi";
 import FullNavMenu from "../../components/FullNavMenu";
 import { useHeroContext } from "./utils/context";
-import Home from "./components/Home";
+import Home from "../../components/Home";
 import { SiSoundcloud } from "react-icons/si";
 
 export default function HeroView() {
-  const { onOpen, playAudio, setPlayAudio } = useHeroContext();
+  const { onOpen, playAudio, setPlayAudio, children } = useHeroContext();
   return (
     <Flex w={"100vw"} minH="100vh" overflowX={"hidden"} userSelect="none">
       <Flex display={{ base: "none", xl: "inherit" }}>
@@ -63,8 +63,8 @@ export default function HeroView() {
             <GiHamburgerMenu />
           </Flex>
         </Flex>
-        <Flex w={"100%"}>
-          <Home />
+        <Flex w={"100%"} direction="column">
+          {children}
         </Flex>
       </Flex>
     </Flex>
