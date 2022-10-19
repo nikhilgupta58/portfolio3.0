@@ -42,9 +42,9 @@ export default function Home() {
           <Text ml={{ base: "10px", md: "20px" }}>{"<body>"}</Text>
         </Flex>
         <Flex direction={"column"}>
-          <Text ml={{ base: "10px", md: "20px" }}>{"<h1>"}</Text>
+          <Text ml={{ base: "20px", md: "40px" }}>{"<h1>"}</Text>
           <Flex
-            ml={{ base: "20px", md: "40px" }}
+            ml={{ base: "30px", md: "60px" }}
             color="white"
             fontWeight={"700"}
             fontSize={{
@@ -203,7 +203,7 @@ export default function Home() {
               );
             })}
           </Flex>
-          <Text ml={{ base: "10px", md: "20px" }}>{"</h1>"}</Text>
+          <Text ml={{ base: "20px", md: "40px" }}>{"</h1>"}</Text>
           <Flex
             direction={"column"}
             as={motion.div}
@@ -216,9 +216,9 @@ export default function Home() {
               },
             }}
           >
-            <Text ml={{ base: "10px", md: "20px" }}>{"<p>"}</Text>
+            <Text ml={{ base: "20px", md: "40px" }}>{"<p>"}</Text>
             <Text
-              ml={{ base: "20px", md: "40px" }}
+              ml={{ base: "30px", md: "60px" }}
               color="#7B7D7D"
               fontSize={{
                 base: "12px",
@@ -231,7 +231,7 @@ export default function Home() {
             >
               {"Front End Developer / Web Developer"}
             </Text>
-            <Text ml={{ base: "10px", md: "20px" }}>{"</p>"}</Text>
+            <Text ml={{ base: "20px", md: "40px" }}>{"</p>"}</Text>
           </Flex>
           <Flex
             as={motion.div}
@@ -244,7 +244,7 @@ export default function Home() {
               },
             }}
           >
-            <CustomButton ml={{ base: "20px", md: "40px" }} mt={"30px"}>
+            <CustomButton ml={{ base: "30px", md: "60px" }} mt={"30px"}>
               Contact me!
             </CustomButton>
           </Flex>
