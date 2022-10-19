@@ -1,14 +1,13 @@
-import { Flex, Text } from "@chakra-ui/react";
 import FooterHTML from "../components/FooterHTML";
-import Home from "../components/Home";
+import HeaderHTML from "../components/HeaderHTML";
 import Project from "../components/Project";
 import { Hero } from "./Hero";
 
-export default function Dashboard() {
+export default function Portfolio() {
   return (
     <Hero>
       <>
-        <Home />
+        <HeaderHTML />
         <Project />
         <FooterHTML />
       </>
