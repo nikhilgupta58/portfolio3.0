@@ -22,7 +22,7 @@ export default function FullNavMenu() {
       width={"100vw"}
       zIndex={100}
       minHeight="100vh"
-      position={"fixed"}
+      position={"absolute"}
       overflowY="scroll"
       overflowX={"hidden"}
       top="0"
