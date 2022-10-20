@@ -1,9 +1,11 @@
-import { Flex, Image, StackDivider, Text, VStack } from "@chakra-ui/react";
+import { Flex, Image, Text } from "@chakra-ui/react";
 import React from "react";
+import { useHistory } from "react-router-dom";
 import { useHeroContext } from "../pages/Hero/utils/context";
 
 export default function Sidebar() {
   const { Menu, socialMedia } = useHeroContext();
+  const history = useHistory();
   return (
     <>
       <Flex
@@ -22,6 +24,10 @@ export default function Sidebar() {
           p="20px 0"
           bgColor={"black"}
           direction="column"
+          cursor={"pointer"}
+          onClick={() => {
+            history.push("/");
+          }}
           alignItems="center"
         >
           <Flex>

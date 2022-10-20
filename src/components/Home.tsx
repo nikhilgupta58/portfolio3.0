@@ -2,7 +2,7 @@ import { Flex, Image, Text } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import React from "react";
 import { BiDownArrowAlt } from "react-icons/bi";
-import CustomButton from "../../../components/CustomButton";
+import CustomButton from "./CustomButton";
 
 export default function Home() {
   const text = [
@@ -16,7 +16,7 @@ export default function Home() {
   return (
     <Flex
       w="100%"
-      h="100vh"
+      minH="100vh"
       direction={"column"}
       justifyContent={"space-between"}
     >
