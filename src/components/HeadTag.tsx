@@ -1,6 +1,7 @@
 import { Flex, Text } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import React from "react";
+import HtmlTag from "./HtmlTag";
 
 export default function HeadTag({
   text,
@@ -14,25 +15,19 @@ export default function HeadTag({
 
   return (
     <Flex direction="column">
-      <Text
-        ml={{ base: "20px", md: "40px" }}
-        color={"#515A5A"}
-        fontFamily={`'Caveat', cursive;`}
-        fontSize={{
-          base: "20px",
-          xs: "22px",
-          sm: "23px",
-          md: "24px",
-          lg: "25px",
-          xl: "25px",
-        }}
-      >
-        {"<h2>"}
-      </Text>
+      <HtmlTag tag={"<h2>"} ml={{ base: "20px", md: "40px" }} />
       <Flex
         ml={{ base: "30px", md: "60px" }}
         fontWeight={"700"}
         fontSize={{
+          base: "28px",
+          xs: "32px",
+          sm: "40px",
+          md: "58px",
+          lg: "65px",
+          xl: "73px",
+        }}
+        lineHeight={{
           base: "28px",
           xs: "32px",
           sm: "40px",
@@ -103,21 +98,7 @@ export default function HeadTag({
           );
         })}
       </Flex>
-      <Text
-        ml={{ base: "20px", md: "40px" }}
-        color={"#515A5A"}
-        fontFamily={`'Caveat', cursive;`}
-        fontSize={{
-          base: "20px",
-          xs: "22px",
-          sm: "23px",
-          md: "24px",
-          lg: "25px",
-          xl: "25px",
-        }}
-      >
-        {"</h2>"}
-      </Text>
+      <HtmlTag tag={"</h2>"} ml={{ base: "20px", md: "40px" }} />
     </Flex>
   );
 }
