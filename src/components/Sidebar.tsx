@@ -60,7 +60,7 @@ export default function Sidebar() {
             borderY={"1px solid #282828"}
             direction={"column"}
           >
-            {Menu.map((row: { title: string }, id: any) => {
+            {Menu.map((row: { title: string; path: string }, id: any) => {
               return (
                 <Flex
                   justifyContent={"center"}
@@ -78,6 +78,7 @@ export default function Sidebar() {
                     transition: "all 0.4s",
                   }}
                   key={id}
+                  onClick={() => history.push(row.path)}
                 >
                   <Text>{row.title}</Text>
                 </Flex>

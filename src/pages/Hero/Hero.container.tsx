@@ -19,6 +19,7 @@ export default function HeroContainer({
     },
     {
       title: "Work",
+      path: "/portfolio",
     },
     {
       title: "Contact",

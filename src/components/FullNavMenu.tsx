@@ -2,6 +2,7 @@ import { CloseIcon } from "@chakra-ui/icons";
 import { Flex, Text, Image } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import React from "react";
+import { useHistory } from "react-router-dom";
 import { useHeroContext } from "../pages/Hero/utils/context";
 
 export default function FullNavMenu() {
@@ -16,6 +17,8 @@ export default function FullNavMenu() {
       }, 200);
     }
   }, [closeClick]);
+
+  const history = useHistory();
 
   return (
     <Flex
@@ -92,7 +95,7 @@ export default function FullNavMenu() {
         borderY={"1px solid #282828"}
         direction={"column"}
       >
-        {Menu.map((row: { title: string }, id: any) => {
+        {Menu.map((row: { title: string; path: string }, id: any) => {
           return (
             <Flex
               justifyContent={"center"}
@@ -110,6 +113,7 @@ export default function FullNavMenu() {
                 transition: "all 0.4s",
               }}
               key={id}
+              onClick={() => history.push(row.path)}
             >
               <Text>{row.title}</Text>
             </Flex>
