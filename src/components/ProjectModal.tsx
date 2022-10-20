@@ -42,7 +42,7 @@ export default function ProjectModal({
         left={"50%"}
         transform={"translate(-50%,-50%)"}
         p="5px"
-        // bgColor={"white"}
+        bgColor={"white"}
         as={motion.div}
         opacity="0"
         maxH={"70vh"}
