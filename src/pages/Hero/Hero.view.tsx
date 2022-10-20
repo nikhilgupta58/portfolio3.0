@@ -1,10 +1,9 @@
 import { Flex, Text } from "@chakra-ui/react";
-import Sidebar from "../../components/Sidebar";
 import { GiHamburgerMenu } from "react-icons/gi";
-import FullNavMenu from "../../components/FullNavMenu";
-import { useHeroContext } from "./utils/context";
-import Home from "../../components/Home";
 import { SiSoundcloud } from "react-icons/si";
+import FullNavMenu from "../../components/FullNavMenu";
+import Sidebar from "../../components/Sidebar";
+import { useHeroContext } from "./utils/context";
 
 export default function HeroView() {
   const { onOpen, playAudio, setPlayAudio, children } = useHeroContext();

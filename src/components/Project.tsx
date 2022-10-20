@@ -1,9 +1,16 @@
-import { Flex, Text, Image } from "@chakra-ui/react";
+import { Flex } from "@chakra-ui/react";
 import React from "react";
-import FooterHTML from "./FooterHTML";
-import HeaderHTML from "./HeaderHTML";
+import {
+  client
+} from "../utils/contenful";
 
 export default function Project() {
+  React.useEffect(() => {
+    const posts = client.getEntries({
+      content_type: "project",
+    });
+  }, []);
+
   return (
     <Flex direction={"column"}>
       <Flex w={"100%"}>
