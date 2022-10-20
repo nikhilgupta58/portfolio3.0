@@ -1,4 +1,11 @@
-import { Flex, Text, Image, Grid, GridItem } from "@chakra-ui/react";
+import {
+  Flex,
+  Text,
+  Image,
+  Grid,
+  GridItem,
+  useDisclosure,
+} from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import React from "react";
 import { client } from "../utils/contenful";
@@ -6,6 +13,7 @@ import { getFileLink } from "../utils/lib";
 import { IProjectField, IProjectProp, IProjects } from "../utils/type";
 import HeadTag from "./HeadTag";
 import HtmlTag from "./HtmlTag";
+import ProjectModal from "./ProjectModal";
 
 export default function Project() {
   const [projects, setProjects] = React.useState<IProjectProp[]>([]);
@@ -40,7 +48,8 @@ export default function Project() {
       setProjects(projects);
     })();
   }, []);
-
+  const [item, setItem] = React.useState<IProjectProp | null>(null);
+  const { isOpen, onClose, onOpen } = useDisclosure();
   return (
     <>
       <Flex
@@ -76,7 +85,15 @@ export default function Project() {
           my="10px"
         >
           {projects.map((row, id) => (
-            <GridItem key={id} overflow="hidden" cursor={"pointer"}>
+            <GridItem
+              key={id}
+              overflow="hidden"
+              cursor={"pointer"}
+              onClick={() => {
+                setItem(row);
+                onOpen();
+              }}
+            >
               <Flex
                 opacity={0.5}
                 onMouseOver={() => setHover(id)}
@@ -133,6 +150,7 @@ export default function Project() {
         </Grid>
         <HtmlTag tag="</section>" />
       </Flex>
+      {item && <ProjectModal data={item} isOpen={isOpen} onClose={onClose} />}
     </>
   );
 }
