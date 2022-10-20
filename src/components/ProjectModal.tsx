@@ -45,8 +45,8 @@ export default function ProjectModal({
         // bgColor={"white"}
         as={motion.div}
         opacity="0"
-        maxH={"80vh"}
-        maxWidth="600px"
+        maxH={"70vh"}
+        // maxWidth={"100vw"}
         overflow="hidden"
         borderRadius={{ base: "5px", sm: "10px", md: "20px" }}
         animate={isOpen ? { opacity: 1 } : { opacity: 0 }}
