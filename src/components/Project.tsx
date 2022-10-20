@@ -3,6 +3,7 @@ import React from "react";
 import { client } from "../utils/contenful";
 import { getFileLink } from "../utils/lib";
 import { IProjectField, IProjectProp, IProjects } from "../utils/type";
+import HeadTag from "./HeadTag";
 
 export default function Project() {
   const [projects, setProjects] = React.useState<IProjectProp[]>([]);
@@ -38,9 +39,9 @@ export default function Project() {
   }, []);
 
   return (
-    <Flex direction={"column"}>
+    <Flex direction={"column"} p={{ base: "10px 0px", xl: "20px 40px" }}>
       <Flex w={"100%"}>
-        <>My Portfolio</>
+        <HeadTag text="My Portfolio" />
       </Flex>
     </Flex>
   );
