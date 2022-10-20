@@ -22,7 +22,12 @@ export default function ProjectModal({
       display={isOpen ? "inherit" : "none"}
     >
       <Flex
-        filter={"blur(1000px)"}
+        filter={{
+          base: "blur(100px)",
+          sm: "blur(120px)",
+          md: "blur(140px)",
+          lg: "blur(160px)",
+        }}
         // opacity="0.1"
         bgColor="#1a1a1a"
         zIndex={50}
@@ -40,7 +45,7 @@ export default function ProjectModal({
         // bgColor={"white"}
         as={motion.div}
         opacity="0"
-        maxH={"70vh"}
+        maxH={"80vh"}
         maxWidth="600px"
         overflow="hidden"
         borderRadius={{ base: "5px", sm: "10px", md: "20px" }}
