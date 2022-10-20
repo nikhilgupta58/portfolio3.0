@@ -1,20 +1,32 @@
 import { Flex, Text } from "@chakra-ui/react";
 import { motion } from "framer-motion";
-import React from "react";
+import React, { useRef } from "react";
 import HtmlTag from "./HtmlTag";
 
-export default function HeadTag({
-  text,
-  animate = true,
-}: {
-  text: string;
-  animate?: boolean;
-}) {
+export default function HeadTag({ text }: { text: string }) {
   const title = text.split("");
   const [textHoverId, setTextHoverId] = React.useState(-1);
+  const [offsetTop, setOffsetTop] = React.useState(0);
+  const [animate, setAnimate] = React.useState(false);
+
+  React.useEffect(() => {
+    window.addEventListener("scroll", (e) => {
+      setOffsetTop(window.pageYOffset);
+    });
+  }, []);
+
+  const ref = useRef<any>(null);
+
+  React.useEffect(() => {
+    if (ref?.current && window) {
+      if (offsetTop > ref?.current?.offsetTop - window.innerHeight + 50) {
+        setAnimate(true);
+      }
+    }
+  }, [ref, ref?.current, window.pageYOffset]);
 
   return (
-    <Flex direction="column">
+    <Flex direction="column" ref={ref}>
       <HtmlTag tag={"<h2>"} ml={{ base: "20px", md: "40px" }} />
       <Flex
         ml={{ base: "30px", md: "60px" }}
@@ -82,7 +94,8 @@ export default function HeadTag({
                         duration: 0.1,
                       },
                     }
-                  : {
+                  : animate
+                  ? {
                       opacity: 1,
                       transform: ["scale(1)", "scale(1.5)", "scale(1)"],
                       transition: {
@@ -91,6 +104,7 @@ export default function HeadTag({
                         duration: 0.2,
                       },
                     }
+                  : {}
               }
             >
               {row}
