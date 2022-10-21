@@ -50,6 +50,7 @@ export default function ProjectModal({
         overflow="hidden"
         borderRadius={{ base: "5px", sm: "10px", md: "20px" }}
         animate={isOpen ? { opacity: 1 } : { opacity: 0 }}
+        maxW="850px"
       >
         <Image src={data.images[0]} />
       </Flex>
