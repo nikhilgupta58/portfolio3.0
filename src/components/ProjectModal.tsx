@@ -2,6 +2,10 @@ import { Flex, Image, Text } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import React from "react";
 import { IProjectProp } from "../utils/type";
+import {
+  IoCaretBackCircleSharp,
+  IoCaretForwardCircleSharp,
+} from "react-icons/io5";
 
 export default function ProjectModal({
   data,
@@ -12,6 +16,8 @@ export default function ProjectModal({
   isOpen: boolean;
   onClose: () => void;
 }) {
+  const [image, setImage] = React.useState(0);
+  const length = data?.images.length;
   return (
     <Flex
       top={0}
@@ -50,9 +56,44 @@ export default function ProjectModal({
         overflow="hidden"
         borderRadius={{ base: "5px", sm: "10px", md: "20px" }}
         animate={isOpen ? { opacity: 1 } : { opacity: 0 }}
-        maxW="850px"
+        maxW="500px"
       >
-        <Image src={data.images[0]} />
+        <Image src={data.images[image]} fallbackSrc="/loading.png" />
+        {length != 1 && (
+          <Flex
+            gridGap={{ base: "2px", sm: "4px", md: "6px", lg: "8px" }}
+            pos="absolute"
+            fontSize={{ base: "20px", sm: "30px", md: "35px", lg: "40px" }}
+            color="brick"
+            bottom={{ base: "2px", sm: "4px", md: "6px", lg: "8px" }}
+            right={{ base: "2px", sm: "4px", md: "6px", lg: "8px" }}
+          >
+            <Flex
+              cursor={"pointer"}
+              onClick={() => {
+                if (image == 0) {
+                  setImage(length - 1);
+                } else {
+                  setImage(image - 1);
+                }
+              }}
+            >
+              <IoCaretBackCircleSharp />
+            </Flex>
+            <Flex
+              cursor={"pointer"}
+              onClick={() => {
+                if (image == length - 1) {
+                  setImage(0);
+                } else {
+                  setImage(image + 1);
+                }
+              }}
+            >
+              <IoCaretForwardCircleSharp />
+            </Flex>
+          </Flex>
+        )}
       </Flex>
       <Flex
         zIndex={60}
