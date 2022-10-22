@@ -1,4 +1,5 @@
 import { Flex, Text } from "@chakra-ui/react";
+import BgTag from "../components/BgTag";
 import FooterHTML from "../components/FooterHTML";
 import HeadTag from "../components/HeadTag";
 import Home from "../components/Home";
@@ -21,31 +22,7 @@ export default function Dashboard() {
 const DashboardProject = () => {
   return (
     <Flex direction="column" position={"relative"}>
-      <Flex
-        position={"absolute"}
-        fontSize={{
-          base: "200px",
-          xs: "250px",
-          sm: "300px",
-          md: "350px",
-          lg: "400px",
-        }}
-        fontWeight={"700"}
-        right={"-200px"}
-        top={0}
-        lineHeight={{
-          base: "200px",
-          xs: "250px",
-          sm: "300px",
-          md: "350px",
-          lg: "400px",
-        }}
-        color="#272726"
-        zIndex={1}
-        opacity="0.5"
-      >
-        WORK
-      </Flex>
+      <BgTag text="WORK" />
       <Flex
         direction={"column"}
         p={{ base: "10px 0px", xl: "20px 40px" }}
