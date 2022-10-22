@@ -6,7 +6,8 @@ import Sidebar from "../../components/Sidebar";
 import { useHeroContext } from "./utils/context";
 
 export default function HeroView() {
-  const { onOpen, playAudio, setPlayAudio, children } = useHeroContext();
+  const { onOpen, playAudio, setPlayAudio, children, isOpen } =
+    useHeroContext();
   return (
     <Flex w={"100vw"} minH="100vh" overflowX={"hidden"} userSelect="none">
       <Flex display={{ base: "none", xl: "inherit" }}>
@@ -62,7 +63,11 @@ export default function HeroView() {
             <GiHamburgerMenu />
           </Flex>
         </Flex>
-        <Flex w={"100%"} direction="column">
+        <Flex
+          w={"100%"}
+          direction="column"
+          display={!isOpen ? "inherit" : "none"}
+        >
           {children}
         </Flex>
       </Flex>
