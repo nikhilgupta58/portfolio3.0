@@ -6,14 +6,14 @@ export default function BgTag({ text }: { text: string }) {
     <Flex
       position={"absolute"}
       fontSize={{
-        base: "200px",
-        xs: "250px",
-        sm: "300px",
+        base: "150px",
+        xs: "220px",
+        sm: "270px",
         md: "350px",
         lg: "400px",
       }}
       fontWeight={"700"}
-      right={"-200px"}
+      right={{ base: "-100px", sm: "-150px", md: "-200px" }}
       top={0}
       lineHeight={{
         base: "200px",
