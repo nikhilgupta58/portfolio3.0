@@ -43,7 +43,7 @@ const DashboardProject = () => {
           I’ve been working in the industry for over a decade, and I’ve seen
           some pretty amazing things. But the most important thing is that I’ve
           been able to do what I love every day. <br />
-          Here is a selection of my latest work is displayed here.
+          <br />A selection of my latest work is displayed here.
         </Text>
         <HtmlTag tag="</p>" ml={{ base: "20px", md: "40px" }} />
       </Flex>
