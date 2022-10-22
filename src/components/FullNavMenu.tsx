@@ -71,6 +71,9 @@ export default function FullNavMenu() {
           bgColor={"black"}
           direction="column"
           alignItems="center"
+          onClick={() => {
+            history.push("/");
+          }}
         >
           <Flex>
             <Image src="/Logo.png" width={"50px"} height="60px" />

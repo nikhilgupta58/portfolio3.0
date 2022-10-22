@@ -21,6 +21,7 @@ export default function HeroView() {
           w={{ base: "100vw", xl: "calc(100vw - 130px)" }}
           justifyContent="space-between"
           position={"fixed"}
+          zIndex={10}
         >
           <Flex display={{ base: "none", xl: "inherit" }} />
           <Flex alignSelf="self-start">
