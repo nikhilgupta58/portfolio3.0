@@ -57,7 +57,7 @@ export default function Project() {
           base: "repeat(2, 1fr)",
           sm: "repeat(3, 1fr)",
           md: "repeat(4, 1fr)",
-          // lg: "repeat(5, 1fr)",
+          lg: "repeat(5, 1fr)",
         }}
       >
         {projects.map((row, id) => (
@@ -77,7 +77,7 @@ export default function Project() {
               as={motion.div}
               transform="scale(1)"
               animate={
-                hover == id ? { opacity: 1, transform: "scale(1.5)" } : {}
+                hover == id ? { opacity: 1, transform: "scale(1.3)" } : {}
               }
               position="relative"
             >
@@ -113,7 +113,11 @@ export default function Project() {
                 }}
                 as={motion.div}
                 opacity="0"
-                animate={hover == id ? { opacity: 1 } : { opacity: 0 }}
+                animate={
+                  hover == id
+                    ? { opacity: 1 }
+                    : { opacity: 0, transition: { duration: 0.1 } }
+                }
               >
                 <Text
                   textAlign={"center"}

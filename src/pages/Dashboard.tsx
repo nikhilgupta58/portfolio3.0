@@ -20,11 +20,37 @@ export default function Dashboard() {
 
 const DashboardProject = () => {
   return (
-    <>
+    <Flex direction="column" position={"relative"}>
+      <Flex
+        position={"absolute"}
+        fontSize={{
+          base: "200px",
+          xs: "250px",
+          sm: "300px",
+          md: "350px",
+          lg: "400px",
+        }}
+        fontWeight={"700"}
+        right={"-200px"}
+        top={0}
+        lineHeight={{
+          base: "200px",
+          xs: "250px",
+          sm: "300px",
+          md: "350px",
+          lg: "400px",
+        }}
+        color="#272726"
+        zIndex={1}
+        opacity="0.5"
+      >
+        WORK
+      </Flex>
       <Flex
         direction={"column"}
         p={{ base: "10px 0px", xl: "20px 40px" }}
         w={"100%"}
+        zIndex={10}
       >
         <Flex>
           <HeadTag text="My Portfolio" />
@@ -42,11 +68,11 @@ const DashboardProject = () => {
         </Text>
         <HtmlTag tag="</p>" ml={{ base: "20px", md: "40px" }} />
       </Flex>
-      <Flex direction={"column"} mt="20px">
+      <Flex direction={"column"} mt="20px" zIndex={10}>
         <HtmlTag tag="<section>" />
         <Project />
         <HtmlTag tag="</section>" />
       </Flex>
-    </>
+    </Flex>
   );
 };
