@@ -40,7 +40,7 @@ const DashboardProject = () => {
           ml={{ base: "30px", md: "60px" }}
           fontWeight={600}
         >
-          I’ve been working in the industry for over a decade, and I’ve seen
+          I’ve been working in the industry for more than a year, and I’ve seen
           some pretty amazing things. But the most important thing is that I’ve
           been able to do what I love every day. <br />
           <br />A selection of my latest work is displayed here.
