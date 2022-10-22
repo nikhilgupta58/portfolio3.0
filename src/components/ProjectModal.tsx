@@ -28,14 +28,7 @@ export default function ProjectModal({
       display={isOpen ? "inherit" : "none"}
     >
       <Flex
-        filter={{
-          base: "blur(100px)",
-          sm: "blur(120px)",
-          md: "blur(140px)",
-          lg: "blur(160px)",
-        }}
         // opacity="0.1"
-        bgColor="#1a1a1a"
         zIndex={50}
         w="100%"
         h="100%"
@@ -43,6 +36,7 @@ export default function ProjectModal({
       />
       <Flex
         zIndex={60}
+        boxShadow="0px 0px 300px 200px rgba(0,0,0,0.75)"
         position="absolute"
         top="50%"
         left={"50%"}
