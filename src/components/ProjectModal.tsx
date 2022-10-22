@@ -48,9 +48,9 @@ export default function ProjectModal({
         maxH={"70vh"}
         // maxWidth={"100vw"}
         overflow="hidden"
-        borderRadius={{ base: "5px", sm: "10px", md: "20px" }}
+        borderRadius={{ base: "5px", sm: "10px", md: "10px" }}
         animate={isOpen ? { opacity: 1 } : { opacity: 0 }}
-        maxW="500px"
+        maxW="300px"
       >
         <Image src={data.images[image]} fallbackSrc="/loading.png" />
         {length != 1 && (
