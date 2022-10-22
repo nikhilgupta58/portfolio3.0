@@ -6,11 +6,7 @@ import { Hero } from "./Hero";
 export default function Portfolio() {
   return (
     <Hero>
-      <>
-        <HeaderHTML />
-        <Project />
-        <FooterHTML />
-      </>
+      <Project />
     </Hero>
   );
 }
