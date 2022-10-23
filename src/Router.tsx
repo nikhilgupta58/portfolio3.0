@@ -4,6 +4,7 @@ import { BrowserRouter, Switch, Route, Link, Redirect } from "react-router-dom";
 import Dashboard from "./pages/Dashboard";
 import { Hero } from "./pages/Hero";
 import Portfolio from "./pages/Portfolio";
+import SkillPage from "./pages/SkillPage";
 
 export default function Router() {
   return (
@@ -14,6 +15,9 @@ export default function Router() {
         </Route>
         <Route exact path="/portfolio">
           <Portfolio />
+        </Route>
+        <Route exact path="/skill">
+          <SkillPage />
         </Route>
         {/* <Route path="/users">
           <Users />

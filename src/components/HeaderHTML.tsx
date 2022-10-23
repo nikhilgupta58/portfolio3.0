@@ -5,7 +5,6 @@ export default function HeaderHTML() {
   return (
     <Flex
       w="100%"
-      h="100%"
       p={{ base: "10px 0px", xl: "20px 40px" }}
       justifyContent={"space-between"}
       direction="column"

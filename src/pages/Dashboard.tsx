@@ -5,6 +5,7 @@ import HeadTag from "../components/HeadTag";
 import Home from "../components/Home";
 import HtmlTag from "../components/HtmlTag";
 import Project from "../components/Project";
+import Skills from "../components/Skills";
 import { Hero } from "./Hero";
 
 export default function Dashboard() {
@@ -13,6 +14,9 @@ export default function Dashboard() {
       <>
         <Home />
         <DashboardProject />
+        <Flex >
+          <Skills />
+        </Flex>
         <FooterHTML />
       </>
     </Hero>

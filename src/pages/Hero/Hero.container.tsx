@@ -16,6 +16,7 @@ export default function HeroContainer({
     },
     {
       title: "My Skills",
+      path: "/skill",
     },
     {
       title: "Work",
