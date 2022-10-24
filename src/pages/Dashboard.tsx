@@ -45,7 +45,7 @@ const DashboardProject = () => {
           I’ve been working in the industry for more than a year, and I’ve seen
           some pretty amazing things. But the most important thing is that I’ve
           been able to do what I love every day. <br />A selection of my latest
-          work is displayed here.
+          <span style={{ color: "#08FDD8" }}> work</span> is displayed here.
         </Text>
         <HtmlTag tag="</p>" ml={{ base: "20px", md: "40px" }} />
       </Flex>

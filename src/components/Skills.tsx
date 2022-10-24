@@ -43,6 +43,7 @@ export default function Skills() {
       w={"100%"}
       alignItems={{ base: "inherit", md: "center" }}
       direction={{ base: "column", md: "row" }}
+      p={{ base: "10px 0px", xl: "20px 40px" }}
     >
       <Flex direction={"column"} w={{ base: "80%", md: "57%", lg: "50%" }}>
         <HeadTag text="Me, Myself and I" />
@@ -53,10 +54,11 @@ export default function Skills() {
           ml={{ base: "30px", md: "60px" }}
           fontWeight={600}
         >
-          I’ve been working in the industry for more than a year, and I’ve seen
-          some pretty amazing things. But the most important thing is that I’ve
-          been able to do what I love every day. <br />A selection of my latest
-          work is displayed here.
+          I am a <span style={{ color: "#08FDD8" }}>front-end developer</span>{" "}
+          with a strong understanding of HTML, CSS, and Javascript. I have
+          experience in React and Redux as well.
+          <br /> <br />I am passionate about the web and I love to create things
+          that people can use on the internet.
         </Text>
         <HtmlTag tag="</p>" ml={{ base: "20px", md: "40px" }} />
       </Flex>
@@ -66,13 +68,6 @@ export default function Skills() {
         h={{ base: "400px", md: "400px", lg: "600px" }}
         ref={skillBoxRef}
       >
-        {/* <Flex
-          position={"absolute"}
-          width="100%"
-          height={"100%"}
-          opacity="0"
-          //   zIndex={10}
-        /> */}
         <Globle />
       </Flex>
     </Flex>
