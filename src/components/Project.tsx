@@ -8,6 +8,7 @@ import {
 } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import React from "react";
+import { useLocation } from "react-router-dom";
 import { client } from "../utils/contenful";
 import { getFileLink } from "../utils/lib";
 import { IProjectField, IProjectProp, IProjects } from "../utils/type";
@@ -49,15 +50,24 @@ export default function Project() {
   }, []);
   const [item, setItem] = React.useState<IProjectProp | null>(null);
   const { isOpen, onClose, onOpen } = useDisclosure();
+  const location = useLocation();
   return (
     <>
       <Grid
-        templateColumns={{
-          base: "repeat(2, 1fr)",
-          sm: "repeat(3, 1fr)",
-          md: "repeat(4, 1fr)",
-          lg: "repeat(5, 1fr)",
-        }}
+        templateColumns={
+          location.pathname.includes("portfolio")
+            ? {
+                base: "repeat(2, 1fr)",
+                sm: "repeat(3, 1fr)",
+                md: "repeat(4, 1fr)",
+              }
+            : {
+                base: "repeat(2, 1fr)",
+                sm: "repeat(3, 1fr)",
+                md: "repeat(4, 1fr)",
+                lg: "repeat(5, 1fr)",
+              }
+        }
       >
         {projects.map((row, id) => (
           <GridItem
