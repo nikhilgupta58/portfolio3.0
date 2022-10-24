@@ -10,7 +10,7 @@ export default function SkillPage() {
     <Hero>
       <Flex direction="column">
         <HeaderHTML />
-        <Skills />
+        {/* <Skills /> */}
         <FooterHTML />
       </Flex>
     </Hero>

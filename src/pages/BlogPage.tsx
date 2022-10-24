@@ -11,7 +11,7 @@ export default function BlogPage() {
     <Hero>
       <Flex direction="column">
         <HeaderHTML />
-        <Blog />
+        {/* <Blog /> */}
         <FooterHTML />
       </Flex>
     </Hero>

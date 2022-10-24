@@ -20,7 +20,7 @@ export default function Skills() {
             pinchZoom: false,
             zoomEnabled: false,
             clickToFront: true,
-            initial: [0.3 , -0.2],
+            initial: [0.3, -0.2],
           },
           "tags"
         )
@@ -61,6 +61,9 @@ export default function Skills() {
           experience in React and Redux as well.
           <br /> <br />I am passionate about the web and I love to create things
           that people can use on the internet.
+          <br />
+          <br />I currently work remotely with a amazing team and open for new
+          opportunities.
         </Text>
         <HtmlTag tag="</p>" ml={{ base: "20px", md: "40px" }} />
       </Flex>
