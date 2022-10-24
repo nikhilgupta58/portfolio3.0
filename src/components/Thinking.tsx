@@ -1,13 +1,27 @@
 import { Flex, Image, Text } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import React from "react";
+import { useHistory } from "react-router-dom";
 import { useHeroContext } from "../pages/Hero/utils/context";
 
 export default function Thinking() {
   const { isThinkingOpen, onThinkingClose, onThinkingOpen } = useHeroContext();
+  const [initialLoad, setInitialLoad] = React.useState(false);
+  const [backToFront, setBackToFront] = React.useState(false);
+
+  const history = useHistory();
   React.useEffect(() => {
-    console.log(isThinkingOpen);
-  }, [isThinkingOpen]);
+    if (window.location.pathname != "/") {
+      setInitialLoad(true);
+      setTimeout(() => {
+        setInitialLoad(false);
+        setBackToFront(true);
+      }, 2000);
+    }
+  }, []);
+  React.useEffect(() => {
+    console.log(history);
+  }, []);
   return (
     <Flex
       w={"100%"}
@@ -18,13 +32,23 @@ export default function Thinking() {
       justifyContent="center"
       alignItems={"center"}
       top={0}
-      display={isThinkingOpen ? "inherit" : "none"}
-      left={"-120%"}
+      display={isThinkingOpen || initialLoad ? "inherit" : "none"}
+      left={initialLoad ? "0" : "-120%"}
       as={motion.div}
       animate={
         isThinkingOpen
           ? { left: "0", transition: { duration: 0.5 } }
-          : { left: "-120%" }
+          : initialLoad
+          ? {
+              left: "220%",
+              transition: {
+                duration: 0.5,
+                delay: 1,
+              },
+            }
+          : backToFront
+          ? { left: "-120%", transition: { duration: 0 } }
+          : {}
       }
     >
       <Flex direction={"column"}>
@@ -66,7 +90,11 @@ export default function Thinking() {
             bg={
               "linear-gradient(90deg, rgba(8,253,216,1) 3%, rgba(253,33,85,1) 96%)"
             }
-            w="100%"
+            as={motion.div}
+            animate={
+              initialLoad ? { width: "100%", transition: { duration: 1 } } : {}
+            }
+            w="0"
           />
         </Flex>
       </Flex>

@@ -119,10 +119,12 @@ export default function FullNavMenu() {
               key={id}
               onClick={() => {
                 onClose();
-                onThinkingOpen();
-                setTimeout(() => {
-                  history.push(row.path);
-                }, 1000);
+                if (window.location.pathname != row.path) {
+                  onThinkingOpen();
+                  setTimeout(() => {
+                    history.push(row.path);
+                  }, 1000);
+                }
               }}
             >
               <Text>{row.title}</Text>

@@ -1,7 +1,9 @@
 import { Flex, Image } from "@chakra-ui/react";
 import React from "react";
 import { BrowserRouter, Switch, Route, Link, Redirect } from "react-router-dom";
+import AboutPage from "./pages/AboutPage";
 import BlogPage from "./pages/BlogPage";
+import ContactPage from "./pages/ContactPage";
 import Dashboard from "./pages/Dashboard";
 import { Hero } from "./pages/Hero";
 import Portfolio from "./pages/Portfolio";
@@ -23,12 +25,12 @@ export default function Router() {
         <Route exact path="/blog">
           <BlogPage />
         </Route>
-        {/* <Route path="/users">
-          <Users />
+        <Route exact path="/about">
+          <AboutPage />
         </Route>
-        <Route path="/">
-          <Home />
-        </Route> */}
+        <Route exact path="/contact">
+          <ContactPage />
+        </Route>
         <Route path={"*"}>
           <Hero>
             <Flex justifyContent={"center"} alignItems="center" h="100vh">

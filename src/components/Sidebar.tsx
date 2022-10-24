@@ -80,10 +80,12 @@ export default function Sidebar() {
                   }}
                   key={id}
                   onClick={() => {
-                    onThinkingOpen();
-                    setTimeout(() => {
-                      history.push(row.path);
-                    }, 1000);
+                    if (window.location.pathname != row.path) {
+                      onThinkingOpen();
+                      setTimeout(() => {
+                        history.push(row.path);
+                      }, 1000);
+                    }
                   }}
                 >
                   <Text>{row.title}</Text>
