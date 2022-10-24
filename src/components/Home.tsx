@@ -2,6 +2,8 @@ import { Flex, Image, Text } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import React from "react";
 import { BiDownArrowAlt } from "react-icons/bi";
+import { useHistory } from "react-router-dom";
+import { useHeroContext } from "../pages/Hero/utils/context";
 import CustomButton from "./CustomButton";
 import ScrollDown from "./ScrollDown";
 
@@ -13,7 +15,8 @@ export default function Home() {
   ];
   const [textHoverId, setTextHoverId] = React.useState({ row: -1, col: -1 });
   let count = 0;
-
+  const history = useHistory();
+  const { onThinkingOpen } = useHeroContext();
   return (
     <Flex
       w="100%"
@@ -245,7 +248,16 @@ export default function Home() {
               },
             }}
           >
-            <CustomButton ml={{ base: "30px", md: "60px" }} mt={"30px"}>
+            <CustomButton
+              ml={{ base: "30px", md: "60px" }}
+              mt={"30px"}
+              onClick={(e) => {
+                onThinkingOpen();
+                setTimeout(() => {
+                  history.push("/contact");
+                }, 1000);
+              }}
+            >
               Contact me!
             </CustomButton>
           </Flex>

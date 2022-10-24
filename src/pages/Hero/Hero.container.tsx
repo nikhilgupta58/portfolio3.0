@@ -55,6 +55,7 @@ export default function HeroContainer({
       },
     },
   ];
+  const [initialLoad, setInitialLoad] = React.useState(false);
   const audioRef = useRef<any>(null);
   const [playAudio, setPlayAudio] = React.useState(false);
   const { isOpen, onClose, onOpen } = useDisclosure();
@@ -67,6 +68,10 @@ export default function HeroContainer({
   const play = () => {
     audioRef.current.play();
   };
+
+  React.useEffect(() => {
+    window.scroll(0, 0);
+  }, []);
 
   const stop = () => {
     audioRef.current.pause();
@@ -94,6 +99,8 @@ export default function HeroContainer({
         isThinkingOpen,
         onThinkingClose,
         onThinkingOpen,
+        initialLoad,
+        setInitialLoad,
       }}
     >
       <HeroView />

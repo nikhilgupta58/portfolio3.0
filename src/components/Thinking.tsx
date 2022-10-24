@@ -5,8 +5,7 @@ import { useHistory } from "react-router-dom";
 import { useHeroContext } from "../pages/Hero/utils/context";
 
 export default function Thinking() {
-  const { isThinkingOpen, onThinkingClose, onThinkingOpen } = useHeroContext();
-  const [initialLoad, setInitialLoad] = React.useState(false);
+  const { isThinkingOpen, initialLoad, setInitialLoad } = useHeroContext();
   const [backToFront, setBackToFront] = React.useState(false);
 
   const history = useHistory();

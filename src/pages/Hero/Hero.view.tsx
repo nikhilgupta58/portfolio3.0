@@ -7,8 +7,15 @@ import Thinking from "../../components/Thinking";
 import { useHeroContext } from "./utils/context";
 
 export default function HeroView() {
-  const { onOpen, playAudio, setPlayAudio, children, isOpen, isThinkingOpen } =
-    useHeroContext();
+  const {
+    onOpen,
+    playAudio,
+    setPlayAudio,
+    children,
+    isOpen,
+    isThinkingOpen,
+    initialLoad,
+  } = useHeroContext();
   return (
     <Flex w={"100vw"} minH="100vh" overflowX={"hidden"} userSelect="none">
       <Flex display={{ base: "none", xl: "inherit" }}>
@@ -30,7 +37,7 @@ export default function HeroView() {
           justifyContent="space-between"
           position={"fixed"}
           zIndex={20}
-          display={!isThinkingOpen ? "inherit" : "none"}
+          display={!isThinkingOpen || !initialLoad ? "inherit" : "none"}
         >
           <Flex display={{ base: "none", xl: "inherit" }} />
           <Flex alignSelf="self-start">
