@@ -48,6 +48,7 @@ export default function HeadTag({ text }: { text: string }) {
           xl: "73px",
         }}
         fontFamily={`'Rubik', sans-serif;`}
+        flexWrap="wrap"
       >
         {title.map((row, id) => {
           if (row == " ") {
@@ -55,12 +56,10 @@ export default function HeadTag({ text }: { text: string }) {
               <Text
                 key={id}
                 mx={{
-                  base: "5px",
-                  xs: "6px",
-                  sm: "7px",
-                  md: "10px",
-                  lg: "14px",
-                  xl: "15px",
+                  base: "4px",
+                  xs: "4px",
+                  sm: "5px",
+                  md: "6px",
                 }}
               />
             );

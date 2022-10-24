@@ -44,7 +44,6 @@ export default function Project() {
       projects = projects.sort(function (a, b) {
         return a.id - b.id;
       });
-      console.log(projects);
       setProjects(projects);
     })();
   }, []);

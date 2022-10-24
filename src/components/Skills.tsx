@@ -8,10 +8,9 @@ export default function Skills() {
     <Flex
       w={"100%"}
       alignItems={{ base: "inherit", md: "center" }}
-      gap="150px"
       direction={{ base: "column", md: "row" }}
     >
-      <Flex direction={"column"} w={{ base: "80%", md: "40%" }}>
+      <Flex direction={"column"} w={{ base: "80%", md: "57%", lg: "50%" }}>
         <HeadTag text="Me, Myself and I" />
         <HtmlTag tag="<p>" ml={{ base: "20px", md: "40px" }} />
         <Text
@@ -27,7 +26,11 @@ export default function Skills() {
         </Text>
         <HtmlTag tag="</p>" ml={{ base: "20px", md: "40px" }} />
       </Flex>
-      <Flex position="relative" w={{ base: "80%", md: "40%" }} height="700px">
+      <Flex
+        position="relative"
+        w={{ base: "100%", md: "43%", lg: "50%" }}
+        h={{ base: "400px", md: "400px", lg: "600px" }}
+      >
         {/* <Flex
           position={"absolute"}
           width="100%"

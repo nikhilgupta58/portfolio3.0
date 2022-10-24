@@ -14,9 +14,7 @@ export default function Dashboard() {
       <>
         <Home />
         <DashboardProject />
-        <Flex >
-          <Skills />
-        </Flex>
+        <Skills />
         <FooterHTML />
       </>
     </Hero>
