@@ -1,7 +1,11 @@
-import { Flex } from "@chakra-ui/react";
+import { Flex, FlexProps } from "@chakra-ui/react";
 import React from "react";
 
-export default function BgTag({ text }: { text: string }) {
+interface IProp extends FlexProps {
+  text: string;
+}
+
+export default function BgTag({ text, ...props }: IProp) {
   return (
     <Flex
       position={"absolute"}
@@ -25,6 +29,7 @@ export default function BgTag({ text }: { text: string }) {
       color="#272726"
       zIndex={1}
       opacity="0.5"
+      {...props}
     >
       {text}
     </Flex>

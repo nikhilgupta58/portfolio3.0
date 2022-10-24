@@ -27,6 +27,7 @@ export default function HeroContainer({
     },
     {
       title: "Blog",
+      path: "/blog",
     },
   ];
   const socialMedia = [

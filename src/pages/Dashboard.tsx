@@ -1,5 +1,6 @@
 import { Flex, Text } from "@chakra-ui/react";
 import BgTag from "../components/BgTag";
+import Blog from "../components/Blog";
 import FooterHTML from "../components/FooterHTML";
 import HeadTag from "../components/HeadTag";
 import Home from "../components/Home";
@@ -16,6 +17,7 @@ export default function Dashboard() {
         <Home />
         <DashboardProject />
         <Skills />
+        <Blog />
         <FooterHTML />
       </>
     </Hero>
