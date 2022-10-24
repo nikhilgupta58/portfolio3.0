@@ -14,11 +14,13 @@ export default function Skills() {
             outlineColour: "transparent",
             reverse: true,
             depth: 0.8,
-            maxSpeed: 0.05,
+            maxSpeed: 0.07,
             weight: true,
             activeCursor: "default",
             pinchZoom: false,
             zoomEnabled: false,
+            clickToFront: true,
+            initial: [0.3 , -0.2],
           },
           "tags"
         )
