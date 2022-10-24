@@ -1,5 +1,5 @@
 import { Flex, Text } from "@chakra-ui/react";
-import React from "react";
+import React, { useRef } from "react";
 import HeadTag from "./HeadTag";
 import HtmlTag from "./HtmlTag";
 
@@ -28,6 +28,16 @@ export default function Skills() {
       }
     });
   }, []);
+  const skillBoxRef = useRef<any>(null);
+  React.useEffect(() => {
+    if (skillBoxRef?.current) {
+      const width = skillBoxRef.current.clientWidth;
+      const height = skillBoxRef.current.clientHeight;
+      const canvas: any = document.getElementById("myCanvas");
+      canvas.width = width;
+      canvas.height = height;
+    }
+  }, [skillBoxRef]);
   return (
     <Flex
       w={"100%"}
@@ -54,6 +64,7 @@ export default function Skills() {
         position="relative"
         w={{ base: "100%", md: "43%", lg: "50%" }}
         h={{ base: "400px", md: "400px", lg: "600px" }}
+        ref={skillBoxRef}
       >
         {/* <Flex
           position={"absolute"}
@@ -71,12 +82,7 @@ export default function Skills() {
 const Globle = () => {
   return (
     <div id="myCanvasContainer">
-      <canvas
-        id="myCanvas"
-        width={"600"}
-        height="600"
-        // style={{ width: "100%", height: "100%" }}
-      >
+      <canvas id="myCanvas" width={"600"} height="600">
         <ul id="tags">
           <li>
             <a href="#" target="_blank" onClick={() => {}}>
