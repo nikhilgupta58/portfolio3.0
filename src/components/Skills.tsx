@@ -82,7 +82,12 @@ export default function Skills() {
 const Globle = () => {
   return (
     <div id="myCanvasContainer">
-      <canvas id="myCanvas" width={"600"} height="600">
+      <canvas
+        id="myCanvas"
+        width={"600"}
+        height="600"
+        onWheel={(e) => e.preventDefault()}
+      >
         <ul id="tags">
           <li>
             <a
