@@ -120,7 +120,9 @@ export default function FullNavMenu() {
               onClick={() => {
                 onClose();
                 onThinkingOpen();
-                history.push(row.path);
+                setTimeout(() => {
+                  history.push(row.path);
+                }, 1000);
               }}
             >
               <Text>{row.title}</Text>

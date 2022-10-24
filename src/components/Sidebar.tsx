@@ -17,6 +17,7 @@ export default function Sidebar() {
         direction={"column"}
         h="100vh"
         pb={"10px"}
+        zIndex={100}
       >
         <Flex
           w={"100%"}
@@ -80,7 +81,9 @@ export default function Sidebar() {
                   key={id}
                   onClick={() => {
                     onThinkingOpen();
-                    history.push(row.path);
+                    setTimeout(() => {
+                      history.push(row.path);
+                    }, 1000);
                   }}
                 >
                   <Text>{row.title}</Text>

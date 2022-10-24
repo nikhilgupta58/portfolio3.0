@@ -1,4 +1,5 @@
 import { Flex, Image, Text } from "@chakra-ui/react";
+import { motion } from "framer-motion";
 import React from "react";
 import { useHeroContext } from "../pages/Hero/utils/context";
 
@@ -13,12 +14,18 @@ export default function Thinking() {
       h="100vh"
       bgColor={"background"}
       position="absolute"
-      zIndex={100}
+      zIndex={50}
       justifyContent="center"
       alignItems={"center"}
       top={0}
       display={isThinkingOpen ? "inherit" : "none"}
-      left={0}
+      left={"-120%"}
+      as={motion.div}
+      animate={
+        isThinkingOpen
+          ? { left: "0", transition: { duration: 0.5 } }
+          : { left: "-120%" }
+      }
     >
       <Flex direction={"column"}>
         <Flex justifyContent={"center"}>
