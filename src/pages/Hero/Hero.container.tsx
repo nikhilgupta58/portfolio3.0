@@ -92,7 +92,7 @@ export default function HeroContainer() {
         setPlayAudio,
         isThinkingOpen,
         onThinkingClose,
-        onThinkingOpen,
+        onThinkingOpen, 
        
       }}
     >
