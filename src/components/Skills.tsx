@@ -85,92 +85,110 @@ const Globle = () => {
       <canvas id="myCanvas" width={"600"} height="600">
         <ul id="tags">
           <li>
-            <a href="#" target="_blank" onClick={() => {}}>
+            <a
+              href="https://www.w3schools.com/html/"
+              target="_blank"
+              onClick={() => {}}
+            >
               HTML
             </a>
           </li>
           <li>
-            <a href="#" target="_blank">
+            <a href="https://www.w3schools.com/css/" target="_blank">
               CSS
             </a>
           </li>
           <li>
-            <a href="#" target="_blank">
+            <a href="https://www.w3schools.com/js/js_es5.asp" target="_blank">
               ES5
             </a>
           </li>
           <li>
-            <a href="#" target="_blank">
+            <a href="https://www.typescriptlang.org/" target="_blank">
               TypeScript
             </a>
           </li>
           <li>
-            <a href="#" target="_blank">
+            <a href="https://restfulapi.net/" target="_blank">
               REST
             </a>
           </li>
           <li>
-            <a href="#" target="_blank">
+            <a href="https://www.figma.com/" target="_blank">
               Figma
             </a>
           </li>
           <li>
-            <a href="#" target="_blank">
+            <a
+              href="https://www.w3schools.com/js/js_json_intro.asp"
+              target="_blank"
+            >
               JSON
             </a>
           </li>
           <li>
-            <a href="#" target="_blank">
+            <a href="https://reactjs.org/" target="_blank">
               React Js
             </a>
           </li>
           <li>
-            <a href="#" target="_blank">
+            <a href="https://nextjs.org/" target="_blank">
               Next Js
             </a>
           </li>
           <li>
-            <a href="#" target="_blank">
+            <a href="https://graphql.org/" target="_blank">
               GraphQL
             </a>
           </li>
           <li>
-            <a href="#" target="_blank">
+            <a href="https://chakra-ui.com/" target="_blank">
               Chakra UI
             </a>
           </li>
           <li>
-            <a href="#" target="_blank">
+            <a
+              href="https://tanstack.com/query/v4/?from=reactQueryV3&original=https://react-query-v3.tanstack.com/"
+              target="_blank"
+            >
               React Query
             </a>
           </li>
           <li>
-            <a href="#" target="_blank">
+            <a href="https://v5.reactrouter.com/" target="_blank">
+              React Router
+            </a>
+          </li>
+          <li>
+            <a href="https://nodejs.org/en/" target="_blank">
               Node JS
             </a>
           </li>
           <li>
-            <a href="#" target="_blank">
+            <a href="https://git-scm.com/" target="_blank">
               Git
             </a>
           </li>
           <li>
-            <a href="#" target="_blank">
+            <a href="https://tailwindcss.com/" target="_blank">
               Tailwind CSS
             </a>
           </li>
           <li>
-            <a href="#" target="_blank">
+            <a
+              href="https://redux.js.org/introduction/getting-started"
+              target="_blank"
+            >
               Redux
             </a>
           </li>
           <li>
-            <a href="#" target="_blank">
+            <a href="https://www.npmjs.com/" target="_blank">
               npm
             </a>
           </li>
           <li>
-            <a href="#" target="_blank">
+            <a href="https://yarnpkg.com/" target="_blank">
               yarn
             </a>
           </li>
