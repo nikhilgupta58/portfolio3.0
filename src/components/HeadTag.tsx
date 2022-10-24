@@ -19,7 +19,7 @@ export default function HeadTag({ text }: { text: string }) {
 
   React.useEffect(() => {
     if (ref?.current && window) {
-      if (offsetTop > ref?.current?.offsetTop - window.innerHeight + 50) {
+      if (offsetTop > ref?.current?.offsetTop - window.innerHeight + 100) {
         setAnimate(true);
       }
     }
