@@ -3,10 +3,11 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { SiSoundcloud } from "react-icons/si";
 import FullNavMenu from "../../components/FullNavMenu";
 import Sidebar from "../../components/Sidebar";
+import Thinking from "../../components/Thinking";
 import { useHeroContext } from "./utils/context";
 
 export default function HeroView() {
-  const { onOpen, playAudio, setPlayAudio, children, isOpen } =
+  const { onOpen, playAudio, setPlayAudio, children, isOpen, isThinkingOpen } =
     useHeroContext();
   return (
     <Flex w={"100vw"} minH="100vh" overflowX={"hidden"} userSelect="none">
@@ -16,12 +17,20 @@ export default function HeroView() {
       <Flex display={{ base: "inherit", xl: "none" }}>
         <FullNavMenu />
       </Flex>
-      <Flex w="100%" h="100%" bgColor="background" direction={"column"}>
+      <Flex
+        w="100%"
+        h="100%"
+        bgColor="background"
+        direction={"column"}
+        position="relative"
+      >
+        <Thinking />
         <Flex
           w={{ base: "100vw", xl: "calc(100vw - 130px)" }}
           justifyContent="space-between"
           position={"fixed"}
           zIndex={20}
+          display={!isThinkingOpen ? "inherit" : "none"}
         >
           <Flex display={{ base: "none", xl: "inherit" }} />
           <Flex alignSelf="self-start">

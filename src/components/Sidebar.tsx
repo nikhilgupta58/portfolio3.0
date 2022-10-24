@@ -4,7 +4,7 @@ import { useHistory } from "react-router-dom";
 import { useHeroContext } from "../pages/Hero/utils/context";
 
 export default function Sidebar() {
-  const { Menu, socialMedia } = useHeroContext();
+  const { Menu, socialMedia, onThinkingOpen } = useHeroContext();
   const history = useHistory();
   return (
     <>
@@ -78,7 +78,10 @@ export default function Sidebar() {
                     transition: "all 0.4s",
                   }}
                   key={id}
-                  onClick={() => history.push(row.path)}
+                  onClick={() => {
+                    onThinkingOpen();
+                    history.push(row.path);
+                  }}
                 >
                   <Text>{row.title}</Text>
                 </Flex>

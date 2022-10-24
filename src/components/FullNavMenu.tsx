@@ -6,7 +6,8 @@ import { useHistory } from "react-router-dom";
 import { useHeroContext } from "../pages/Hero/utils/context";
 
 export default function FullNavMenu() {
-  const { isOpen, onClose, socialMedia, Menu } = useHeroContext();
+  const { isOpen, onClose, socialMedia, Menu, onThinkingOpen } =
+    useHeroContext();
   const [closeClick, setCloseClick] = React.useState(false);
 
   React.useEffect(() => {
@@ -116,7 +117,11 @@ export default function FullNavMenu() {
                 transition: "all 0.4s",
               }}
               key={id}
-              onClick={() => history.push(row.path)}
+              onClick={() => {
+                onClose();
+                onThinkingOpen();
+                history.push(row.path);
+              }}
             >
               <Text>{row.title}</Text>
             </Flex>
