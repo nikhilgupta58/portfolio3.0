@@ -15,10 +15,7 @@ export default function Dashboard() {
       <>
         <Home />
         <DashboardProject />
-        <Flex direction={"column"} justifyContent={"space-between"}>
-          <Skills />
-          <ScrollDown />
-        </Flex>
+        <Skills />
         <FooterHTML />
       </>
     </Hero>
