@@ -14,13 +14,13 @@ export default function BlogPage() {
         <meta charSet="utf-8" />
         <title>Blog | Frontend Developer</title>
       </Helmet>
-      <Hero>
+      <Flex direction={"column"}>
         <Flex direction="column">
           <HeaderHTML />
           {/* <Blog /> */}
           <FooterHTML />
         </Flex>
-      </Hero>{" "}
+      </Flex>
     </>
   );
 }

@@ -11,34 +11,30 @@ import SkillPage from "./pages/SkillPage";
 
 export default function Router() {
   return (
-    <BrowserRouter>
-      <Switch>
-        <Route exact path="/">
-          <Dashboard />
-        </Route>
-        <Route exact path="/portfolio">
-          <Portfolio />
-        </Route>
-        <Route exact path="/skill">
-          <SkillPage />
-        </Route>
-        <Route exact path="/blog">
-          <BlogPage />
-        </Route>
-        <Route exact path="/about">
-          <AboutPage />
-        </Route>
-        <Route exact path="/contact">
-          <ContactPage />
-        </Route>
-        <Route path={"*"}>
-          <Hero>
-            <Flex justifyContent={"center"} alignItems="center" h="100vh">
-              <Image src="/not-found.svg" w={"60%"} h={"60%"} />
-            </Flex>
-          </Hero>
-        </Route>
-      </Switch>
-    </BrowserRouter>
+    <Switch>
+      <Route exact path="/">
+        <Dashboard />
+      </Route>
+      <Route exact path="/portfolio">
+        <Portfolio />
+      </Route>
+      <Route exact path="/skill">
+        <SkillPage />
+      </Route>
+      <Route exact path="/blog">
+        <BlogPage />
+      </Route>
+      <Route exact path="/about">
+        <AboutPage />
+      </Route>
+      <Route exact path="/contact">
+        <ContactPage />
+      </Route>
+      <Route path={"*"}>
+        <Flex justifyContent={"center"} alignItems="center" h="100vh">
+          <Image src="/not-found.svg" w={"60%"} h={"60%"} />
+        </Flex>
+      </Route>
+    </Switch>
   );
 }

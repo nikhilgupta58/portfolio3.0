@@ -4,18 +4,12 @@ import { SiSoundcloud } from "react-icons/si";
 import FullNavMenu from "../../components/FullNavMenu";
 import Sidebar from "../../components/Sidebar";
 import Thinking from "../../components/Thinking";
+import Router from "../../Router";
 import { useHeroContext } from "./utils/context";
 
 export default function HeroView() {
-  const {
-    onOpen,
-    playAudio,
-    setPlayAudio,
-    children,
-    isOpen,
-    isThinkingOpen,
-    initialLoad,
-  } = useHeroContext();
+  const { onOpen, playAudio, setPlayAudio, isOpen, isThinkingOpen } =
+    useHeroContext();
   return (
     <Flex w={"100vw"} minH="100vh" overflowX={"hidden"} userSelect="none">
       <Flex display={{ base: "none", xl: "inherit" }}>
@@ -31,13 +25,13 @@ export default function HeroView() {
         direction={"column"}
         position="relative"
       >
-        <Thinking />
+        {isThinkingOpen && <Thinking />}
         <Flex
           w={{ base: "100vw", xl: "calc(100vw - 130px)" }}
           justifyContent="space-between"
           position={"fixed"}
           zIndex={20}
-          display={!isThinkingOpen || !initialLoad ? "inherit" : "none"}
+          display={!isThinkingOpen ? "inherit" : "none"}
         >
           <Flex display={{ base: "none", xl: "inherit" }} />
           <Flex alignSelf="self-start">
@@ -85,7 +79,7 @@ export default function HeroView() {
           direction="column"
           display={!isOpen ? "inherit" : "none"}
         >
-          {children}
+          <Router />
         </Flex>
       </Flex>
     </Flex>

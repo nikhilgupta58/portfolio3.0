@@ -9,9 +9,7 @@ export default function Portfolio() {
         <meta charSet="utf-8" />
         <title>Portfolio | Frontend Developer</title>
       </Helmet>
-      <Hero>
-        <Project />
-      </Hero>
+      <Project />
     </>
   );
 }

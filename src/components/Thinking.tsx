@@ -1,52 +1,54 @@
 import { Flex, Image, Text } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import React from "react";
-import { useHistory } from "react-router-dom";
 import { useHeroContext } from "../pages/Hero/utils/context";
 
 export default function Thinking() {
-  const { isThinkingOpen, initialLoad, setInitialLoad } = useHeroContext();
-  const [backToFront, setBackToFront] = React.useState(false);
-
-  const history = useHistory();
+  const { isThinkingOpen, onThinkingClose } = useHeroContext();
+  const [initialLoad, setInitialLoad] = React.useState(false);
+  const [frontToBank, setFrontToBank] = React.useState(false);
   React.useEffect(() => {
-    if (window.location.pathname != "/") {
+    setTimeout(() => {
       setInitialLoad(true);
-      setTimeout(() => {
-        setInitialLoad(false);
-        setBackToFront(true);
-      }, 2000);
-    }
+    }, 500);
+
+    setTimeout(() => {
+      setFrontToBank(true);
+    }, 1600);
+
+    setTimeout(() => {
+      onThinkingClose();
+    }, 2160);
   }, []);
-  React.useEffect(() => {
-    console.log(history);
-  }, []);
+
   return (
     <Flex
       w={"100%"}
       h="100vh"
       bgColor={"background"}
-      position="absolute"
+      position="fixed"
       zIndex={50}
       justifyContent="center"
       alignItems={"center"}
       top={0}
-      display={isThinkingOpen || initialLoad ? "inherit" : "none"}
-      left={initialLoad ? "0" : "-120%"}
+      display={isThinkingOpen ? "inherit" : "none"}
+      left={"-120%"}
       as={motion.div}
       animate={
-        isThinkingOpen
-          ? { left: "0", transition: { duration: 0.5 } }
-          : initialLoad
+        isThinkingOpen && !frontToBank
+          ? {
+              left: 0,
+              transition: {
+                duration: 0.5,
+              },
+            }
+          : frontToBank
           ? {
               left: "220%",
               transition: {
                 duration: 0.5,
-                delay: 1,
               },
             }
-          : backToFront
-          ? { left: "-120%", transition: { duration: 0 } }
           : {}
       }
     >
@@ -91,7 +93,9 @@ export default function Thinking() {
             }
             as={motion.div}
             animate={
-              initialLoad ? { width: "100%", transition: { duration: 1 } } : {}
+              initialLoad
+                ? { width: "100%", transition: { duration: 1 } }
+                : { width: 0 }
             }
             w="0"
           />

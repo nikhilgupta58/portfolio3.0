@@ -18,15 +18,13 @@ export default function Dashboard() {
         <meta charSet="utf-8" />
         <title>NG | Frontend Developer</title>
       </Helmet>
-      <Hero>
-        <>
-          <Home />
-          <DashboardProject />
-          <Skills />
-          <Blog />
-          <FooterHTML />
-        </>
-      </Hero>
+      <Flex direction={"column"}>
+        <Home />
+        <DashboardProject />
+        <Skills />
+        <Blog />
+        <FooterHTML />
+      </Flex>
     </>
   );
 }

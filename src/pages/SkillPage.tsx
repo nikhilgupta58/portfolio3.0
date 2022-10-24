@@ -11,13 +11,13 @@ export default function SkillPage() {
         <meta charSet="utf-8" />
         <title>Skill & Experience | Frontend Developer</title>
       </Helmet>
-      <Hero>
+      <Flex direction={"column"}>
         <Flex direction="column">
           <HeaderHTML />
           {/* <Skills /> */}
           <FooterHTML />
         </Flex>
-      </Hero>
+      </Flex>
     </>
   );
 }

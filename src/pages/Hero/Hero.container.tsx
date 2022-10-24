@@ -5,11 +5,7 @@ import { RiLinkedinFill } from "react-icons/ri";
 import { IoLogoGithub } from "react-icons/io";
 import { SiHashnode } from "react-icons/si";
 import { useDisclosure } from "@chakra-ui/react";
-export default function HeroContainer({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function HeroContainer() {
   const Menu = [
     {
       title: "About",
@@ -55,7 +51,6 @@ export default function HeroContainer({
       },
     },
   ];
-  const [initialLoad, setInitialLoad] = React.useState(false);
   const audioRef = useRef<any>(null);
   const [playAudio, setPlayAudio] = React.useState(false);
   const { isOpen, onClose, onOpen } = useDisclosure();
@@ -95,12 +90,10 @@ export default function HeroContainer({
         onOpen,
         playAudio,
         setPlayAudio,
-        children,
         isThinkingOpen,
         onThinkingClose,
         onThinkingOpen,
-        initialLoad,
-        setInitialLoad,
+       
       }}
     >
       <HeroView />
