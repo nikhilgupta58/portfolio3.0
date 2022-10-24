@@ -10,29 +10,6 @@
     <div id="root"></div>
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <script src="tagcanvas.min.js" type="text/javascript"></script>
-    <script>
-      $(document).ready(function () {
-        if (
-          !$("#myCanvas").tagcanvas(
-            {
-              textColour: "#08fdd8",
-              outlineColour: "transparent",
-              reverse: true,
-              depth: 0.8,
-              maxSpeed: 0.05,
-              weight: true,
-              activeCursor: "default",
-              pinchZoom: false,
-              zoomEnabled: false,
-            },
-            "tags"
-          )
-        ) {
-          // something went wrong hide the canvas container,
-          $("#myCanvasContainer");
-        }
-      });
-    </script>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

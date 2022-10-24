@@ -4,6 +4,30 @@ import HeadTag from "./HeadTag";
 import HtmlTag from "./HtmlTag";
 
 export default function Skills() {
+  React.useEffect(() => {
+    $(document).ready(function () {
+      if (
+        //@ts-ignore
+        !$("#myCanvas").tagcanvas(
+          {
+            textColour: "#08fdd8",
+            outlineColour: "transparent",
+            reverse: true,
+            depth: 0.8,
+            maxSpeed: 0.05,
+            weight: true,
+            activeCursor: "default",
+            pinchZoom: false,
+            zoomEnabled: false,
+          },
+          "tags"
+        )
+      ) {
+        // something went wrong hide the canvas container,
+        $("#myCanvasContainer");
+      }
+    });
+  }, []);
   return (
     <Flex
       w={"100%"}
@@ -46,11 +70,11 @@ export default function Skills() {
 
 const Globle = () => {
   return (
-    <div id="myCanvasContainer" style={{ width: "100%", height: "100%" }}>
+    <div id="myCanvasContainer">
       <canvas
         id="myCanvas"
-        width={"100"}
-        height="100"
+        width={"600"}
+        height="600"
         // style={{ width: "100%", height: "100%" }}
       >
         <ul id="tags">
