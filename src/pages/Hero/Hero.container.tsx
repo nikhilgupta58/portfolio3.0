@@ -13,6 +13,7 @@ export default function HeroContainer({
   const Menu = [
     {
       title: "About",
+      path: "/about",
     },
     {
       title: "My Skills",
@@ -24,6 +25,7 @@ export default function HeroContainer({
     },
     {
       title: "Contact",
+      path: "/contact",
     },
     {
       title: "Blog",

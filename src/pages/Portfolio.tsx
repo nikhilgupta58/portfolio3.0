@@ -1,12 +1,17 @@
-import FooterHTML from "../components/FooterHTML";
-import HeaderHTML from "../components/HeaderHTML";
+import { Helmet } from "react-helmet";
 import Project from "../components/Project";
 import { Hero } from "./Hero";
 
 export default function Portfolio() {
   return (
-    <Hero>
-      <Project />
-    </Hero>
+    <>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Portfolio | Frontend Developer</title>
+      </Helmet>
+      <Hero>
+        <Project />
+      </Hero>
+    </>
   );
 }

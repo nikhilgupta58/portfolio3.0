@@ -1,4 +1,5 @@
 import { Flex, Text } from "@chakra-ui/react";
+import { Helmet } from "react-helmet";
 import BgTag from "../components/BgTag";
 import Blog from "../components/Blog";
 import FooterHTML from "../components/FooterHTML";
@@ -12,15 +13,21 @@ import { Hero } from "./Hero";
 
 export default function Dashboard() {
   return (
-    <Hero>
-      <>
-        <Home />
-        <DashboardProject />
-        <Skills />
-        <Blog />
-        <FooterHTML />
-      </>
-    </Hero>
+    <>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>NG | Frontend Developer</title>
+      </Helmet>
+      <Hero>
+        <>
+          <Home />
+          <DashboardProject />
+          <Skills />
+          <Blog />
+          <FooterHTML />
+        </>
+      </Hero>
+    </>
   );
 }
 
