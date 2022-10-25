@@ -4,7 +4,6 @@ import FooterHTML from "../components/FooterHTML";
 import HeaderHTML from "../components/HeaderHTML";
 import HeadTag from "../components/HeadTag";
 import HtmlTag from "../components/HtmlTag";
-import ScrollDown from "../components/ScrollDown";
 import { Globle } from "../components/Skills";
 
 export default function AboutPage() {
