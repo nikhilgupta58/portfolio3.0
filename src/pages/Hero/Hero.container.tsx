@@ -112,6 +112,8 @@ export default function HeroContainer() {
         const images: string[] = [];
         item["id"] = row.fields.id;
         item["title"] = title_Val;
+        item["category"] = row.fields.category;
+        item["link"] = row.fields.link;
         item["description"] = desc_Val;
         item["preview"] = getFileLink(
           row.fields.preview.sys.id,

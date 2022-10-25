@@ -21,7 +21,9 @@ export interface IProjectField {
 
 export interface IBlogField {
   fields: {
+    category: string;
     id: string;
+    link: string;
     title: string;
     description: string;
     preview: {
@@ -71,4 +73,6 @@ export interface IBlogProp {
   title: string;
   description: string;
   preview: string;
+  category: string;
+  link: string;
 }
