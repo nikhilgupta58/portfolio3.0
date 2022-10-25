@@ -24,3 +24,8 @@
 .gmap_iframe {
   height: 100% !important;
 }
+
+textarea:focus,
+input:focus {
+  outline: none;
+}

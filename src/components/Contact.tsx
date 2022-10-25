@@ -1,5 +1,6 @@
 import { Flex, Text } from "@chakra-ui/react";
 import BgTag from "./BgTag";
+import ContactForm from "./ContactForm";
 import FooterHTML from "./FooterHTML";
 import HeadTag from "./HeadTag";
 import HtmlTag from "./HtmlTag";
@@ -40,6 +41,11 @@ export default function Contact() {
           request or question, don’t hesitate to use the form.
         </Text>
         <HtmlTag tag="</p>" ml={{ base: "20px", md: "40px" }} />
+        <HtmlTag tag="<form>" ml={{ base: "20px", md: "40px" }} />
+        <Flex ml={{ base: "30px", md: "60px" }} w="80%">
+          <ContactForm />
+        </Flex>
+        <HtmlTag tag="</form>" ml={{ base: "20px", md: "40px" }} />
         <Flex display={{ base: "none", md: "inherit" }}>
           <FooterHTML p="0" />
         </Flex>

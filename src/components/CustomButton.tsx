@@ -12,7 +12,6 @@ export default function CustomButton({ children, ...props }: IProp) {
     <Button
       _active={{}}
       _focus={{}}
-      {...props}
       fontFamily={`'Open Sans', sans-serif`}
       borderRadius="0"
       bgColor={"background"}
@@ -36,6 +35,7 @@ export default function CustomButton({ children, ...props }: IProp) {
       }}
       as={motion.div}
       animate={hover ? { color: "#1d1d1d" } : { color: "cyan" }}
+      {...props}
     >
       <Text zIndex={"10"}>{children}</Text>
       <Flex
