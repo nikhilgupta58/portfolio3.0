@@ -2,6 +2,7 @@ import { Flex, Text } from "@chakra-ui/react";
 import { Helmet } from "react-helmet";
 import BgTag from "../components/BgTag";
 import Blog from "../components/Blog";
+import Contact from "../components/Contact";
 import FooterHTML from "../components/FooterHTML";
 import HeadTag from "../components/HeadTag";
 import Home from "../components/Home";
@@ -25,7 +26,7 @@ export default function Dashboard() {
         <DashboardProject />
         <Skills />
         <Blog />
-        <FooterHTML />
+        <Contact/>
       </Flex>
     </>
   );
