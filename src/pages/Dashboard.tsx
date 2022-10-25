@@ -3,12 +3,10 @@ import { Helmet } from "react-helmet";
 import BgTag from "../components/BgTag";
 import Blog from "../components/Blog";
 import Contact from "../components/Contact";
-import FooterHTML from "../components/FooterHTML";
 import HeadTag from "../components/HeadTag";
 import Home from "../components/Home";
 import HtmlTag from "../components/HtmlTag";
 import Project from "../components/Project";
-import ScrollDown from "../components/ScrollDown";
 import Skills from "../components/Skills";
 import { useHeroContext } from "./Hero/utils/context";
 
