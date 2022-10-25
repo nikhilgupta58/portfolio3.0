@@ -19,33 +19,7 @@ export default function Sidebar() {
         pb={"10px"}
         zIndex={100}
       >
-        <Flex
-          w={"100%"}
-          justifyContent="center"
-          p="20px 0"
-          bgColor={"black"}
-          direction="column"
-          cursor={"pointer"}
-          onClick={() => {
-            history.push("/");
-          }}
-          alignItems="center"
-        >
-          <Flex>
-            <Image src="/Logo.png" width={"60px"} height="72px" />
-          </Flex>
-          <Text
-            fontSize={"27px"}
-            margin="1px 0 0"
-            fontFamily={`'Rubik', sans-serif;`}
-            fontWeight="600"
-          >
-            Nikhil
-          </Text>
-          <Text color={"#a5a5a5"} margin="10px 0 0" fontSize={"12px"}>
-            Web Developer
-          </Text>
-        </Flex>
+        <LogoBox />
 
         <Flex
           w={"100%"}
@@ -121,3 +95,36 @@ export default function Sidebar() {
     </>
   );
 }
+
+export const LogoBox = () => {
+  const history = useHistory();
+  return (
+    <Flex
+      w={"100%"}
+      justifyContent="center"
+      p="20px 0"
+      bgColor={"black"}
+      direction="column"
+      cursor={"pointer"}
+      onClick={() => {
+        history.push("/");
+      }}
+      alignItems="center"
+    >
+      <Flex>
+        <Image src="/Logo.png" width={"60px"} height="72px" />
+      </Flex>
+      <Text
+        fontSize={"27px"}
+        margin="1px 0 0"
+        fontFamily={`'Rubik', sans-serif;`}
+        fontWeight="600"
+      >
+        Nikhil
+      </Text>
+      <Text color={"#a5a5a5"} margin="10px 0 0" fontSize={"12px"}>
+        Web Developer
+      </Text>
+    </Flex>
+  );
+};

@@ -10,7 +10,7 @@ export default function Thinking() {
   React.useEffect(() => {
     setTimeout(() => {
       setInitialLoad(true);
-    }, 500);
+    }, 300);
 
     setTimeout(() => {
       setFrontToBank(true);
