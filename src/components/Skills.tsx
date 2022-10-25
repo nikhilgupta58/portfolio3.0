@@ -51,7 +51,7 @@ export default function Skills() {
       >
         <Globle />
       </Flex>
-      <Flex position={"absolute"} w="100%" bottom={-20} left={0} zIndex={10}>
+      <Flex position={"absolute"} w="100%" bottom={-15} left={0} zIndex={10}>
         <ScrollDown />
       </Flex>
     </Flex>
