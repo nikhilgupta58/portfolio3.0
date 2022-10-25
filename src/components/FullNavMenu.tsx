@@ -73,6 +73,7 @@ export default function FullNavMenu() {
           direction="column"
           alignItems="center"
           onClick={() => {
+            onClose();
             history.push("/");
           }}
         >

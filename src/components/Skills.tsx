@@ -4,32 +4,6 @@ import HeadTag from "./HeadTag";
 import HtmlTag from "./HtmlTag";
 
 export default function Skills() {
-  React.useEffect(() => {
-    $(document).ready(function () {
-      if (
-        //@ts-ignore
-        !$("#myCanvas").tagcanvas(
-          {
-            textColour: "#08fdd8",
-            outlineColour: "transparent",
-            reverse: true,
-            depth: 0.8,
-            maxSpeed: 0.07,
-            weight: true,
-            activeCursor: "default",
-            pinchZoom: false,
-            zoomEnabled: false,
-            clickToFront: true,
-            initial: [0.3, -0.2],
-          },
-          "tags"
-        )
-      ) {
-        // something went wrong hide the canvas container,
-        $("#myCanvasContainer");
-      }
-    });
-  }, []);
   const skillBoxRef = useRef<any>(null);
   React.useEffect(() => {
     if (skillBoxRef?.current) {
@@ -79,7 +53,33 @@ export default function Skills() {
   );
 }
 
-const Globle = () => {
+export const Globle = () => {
+  React.useEffect(() => {
+    $(document).ready(function () {
+      if (
+        //@ts-ignore
+        !$("#myCanvas").tagcanvas(
+          {
+            textColour: "#08fdd8",
+            outlineColour: "transparent",
+            reverse: true,
+            depth: 0.8,
+            maxSpeed: 0.07,
+            weight: true,
+            activeCursor: "default",
+            pinchZoom: false,
+            zoomEnabled: false,
+            clickToFront: true,
+            initial: [0.05, -0.1],
+          },
+          "tags"
+        )
+      ) {
+        // something went wrong hide the canvas container,
+        $("#myCanvasContainer");
+      }
+    });
+  }, []);
   return (
     <div id="myCanvasContainer">
       <canvas
