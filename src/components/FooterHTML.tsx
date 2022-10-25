@@ -1,7 +1,7 @@
-import { Flex, Text } from "@chakra-ui/react";
+import { Flex, FlexProps, Text } from "@chakra-ui/react";
 import React from "react";
 
-export default function FooterHTML() {
+export default function FooterHTML({ ...props }: FlexProps) {
   return (
     <Flex
       w="100%"
@@ -18,6 +18,7 @@ export default function FooterHTML() {
         lg: "25px",
         xl: "25px",
       }}
+      {...props}
     >
       <Flex direction={"column"}>
         <Text ml={{ base: "10px", md: "20px" }}>{"</body>"}</Text>
