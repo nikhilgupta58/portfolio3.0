@@ -11,3 +11,10 @@ export const getFileLink = (id: string, asset: IContenFulAsset[]) => {
   }
   return "";
 };
+
+const colorSchemeArray = ["#E4EE89", "#81D8F7", "#FD2155", "#ffa500"];
+
+export default function getRandomColor() {
+  const index = Math.floor(Math.random() * colorSchemeArray.length);
+  return colorSchemeArray[index];
+}
