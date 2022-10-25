@@ -1,9 +1,9 @@
 import {
   Flex,
-  Text,
-  Image,
   Grid,
   GridItem,
+  Image,
+  Text,
   useDisclosure,
 } from "@chakra-ui/react";
 import { motion } from "framer-motion";
@@ -12,8 +12,6 @@ import { useLocation } from "react-router-dom";
 import { client } from "../utils/contenful";
 import { getFileLink } from "../utils/lib";
 import { IProjectField, IProjectProp, IProjects } from "../utils/type";
-import HeadTag from "./HeadTag";
-import HtmlTag from "./HtmlTag";
 import ProjectModal from "./ProjectModal";
 
 export default function Project() {

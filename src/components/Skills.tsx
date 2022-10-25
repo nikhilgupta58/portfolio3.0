@@ -119,11 +119,6 @@ export const Globle = () => {
             </a>
           </li>
           <li>
-            <a href="https://www.figma.com/" target="_blank">
-              Figma
-            </a>
-          </li>
-          <li>
             <a
               href="https://www.w3schools.com/js/js_json_intro.asp"
               target="_blank"

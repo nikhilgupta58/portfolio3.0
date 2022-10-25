@@ -19,6 +19,19 @@ export interface IProjectField {
   };
 }
 
+export interface IBlogField {
+  fields: {
+    id: string;
+    title: string;
+    description: string;
+    preview: {
+      sys: {
+        id: string;
+      };
+    };
+  };
+}
+
 export interface IContenFulAsset {
   sys: {
     id: string;
@@ -37,6 +50,13 @@ export interface IProjects {
   };
 }
 
+export interface IBlogs {
+  items: IBlogField[];
+  includes: {
+    Asset: IContenFulAsset[];
+  };
+}
+
 export interface IProjectProp {
   id: string;
   hoverText: string;
@@ -44,4 +64,11 @@ export interface IProjectProp {
   preview: string;
   images: [string];
   name: string;
+}
+
+export interface IBlogProp {
+  id: string;
+  title: string;
+  description: string;
+  preview: string;
 }

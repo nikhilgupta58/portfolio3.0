@@ -7,11 +7,12 @@ import HeadTag from "../components/HeadTag";
 import Home from "../components/Home";
 import HtmlTag from "../components/HtmlTag";
 import Project from "../components/Project";
-import ScrollDown from "../components/ScrollDown";
 import Skills from "../components/Skills";
-import { Hero } from "./Hero";
+import { useHeroContext } from "./Hero/utils/context";
 
 export default function Dashboard() {
+  const { blogs } = useHeroContext();
+  console.log(blogs);
   return (
     <>
       <Helmet>

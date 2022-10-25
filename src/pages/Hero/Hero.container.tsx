@@ -1,10 +1,14 @@
+import { useDisclosure } from "@chakra-ui/react";
 import React, { useRef } from "react";
+import { IoLogoGithub } from "react-icons/io";
+import { RiLinkedinFill } from "react-icons/ri";
+import { SiHashnode } from "react-icons/si";
+import { client } from "../../utils/contenful";
+import { getFileLink } from "../../utils/lib";
+import { IBlogField, IBlogProp, IBlogs } from "../../utils/type";
 import HeroView from "./Hero.view";
 import { HeroContext } from "./utils/context";
-import { RiLinkedinFill } from "react-icons/ri";
-import { IoLogoGithub } from "react-icons/io";
-import { SiHashnode } from "react-icons/si";
-import { useDisclosure } from "@chakra-ui/react";
+
 export default function HeroContainer() {
   const Menu = [
     {
@@ -80,6 +84,48 @@ export default function HeroContainer() {
     }
   }, [playAudio, audioRef]);
 
+  const [blogs, setBlogs] = React.useState<IBlogProp[]>([]);
+
+  React.useEffect(() => {
+    (async () => {
+      const posts: IBlogs | any = await client.getEntries({
+        content_type: "blogs",
+      });
+      let blogs: any[] = [];
+      posts?.items?.map((row: IBlogField) => {
+        const item: any = {};
+        const title: any = row.fields.title;
+        let title_Val = "";
+        title.content.map((e: any) => {
+          e.content.map((row: any) => {
+            title_Val += row.value;
+          });
+        });
+
+        const desc: any = row.fields.description;
+        let desc_Val = "";
+        desc.content.map((e: any) => {
+          e.content.map((row: any) => {
+            desc_Val += row.value;
+          });
+        });
+        const images: string[] = [];
+        item["id"] = row.fields.id;
+        item["title"] = title_Val;
+        item["description"] = desc_Val;
+        item["preview"] = getFileLink(
+          row.fields.preview.sys.id,
+          posts.includes.Asset
+        );
+        blogs.push(item);
+      });
+      blogs = blogs.sort(function (a, b) {
+        return a.id - b.id;
+      });
+      setBlogs(blogs);
+    })();
+  }, []);
+
   return (
     <HeroContext.Provider
       value={{
@@ -92,8 +138,8 @@ export default function HeroContainer() {
         setPlayAudio,
         isThinkingOpen,
         onThinkingClose,
-        onThinkingOpen, 
-       
+        onThinkingOpen,
+        blogs,
       }}
     >
       <HeroView />
