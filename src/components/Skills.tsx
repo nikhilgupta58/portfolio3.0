@@ -2,6 +2,7 @@ import { Flex, Text } from "@chakra-ui/react";
 import React, { useRef } from "react";
 import HeadTag from "./HeadTag";
 import HtmlTag from "./HtmlTag";
+import ScrollDown from "./ScrollDown";
 
 export default function Skills() {
   const skillBoxRef = useRef<any>(null);
@@ -20,6 +21,7 @@ export default function Skills() {
       alignItems={{ base: "inherit", md: "center" }}
       direction={{ base: "column", md: "row" }}
       p={{ base: "10px 0px", xl: "20px 40px" }}
+      position="relative"
     >
       <Flex direction={"column"} w={{ base: "80%", md: "57%", lg: "50%" }}>
         <HeadTag text="Me, Myself and I" />
@@ -48,6 +50,9 @@ export default function Skills() {
         ref={skillBoxRef}
       >
         <Globle />
+      </Flex>
+      <Flex position={"absolute"} w="100%" bottom={-20} left={0}>
+        <ScrollDown />
       </Flex>
     </Flex>
   );

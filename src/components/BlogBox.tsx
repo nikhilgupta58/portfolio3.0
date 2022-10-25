@@ -58,7 +58,7 @@ export default function BlogBox({ data }: { data: IBlogProp }) {
       >
         {data.description}
       </Text>
-      <Flex>
+      <Flex display={window.location.pathname == "/" ? "none" : "inherit"}>
         <Image src={data.preview} />
       </Flex>
     </Flex>

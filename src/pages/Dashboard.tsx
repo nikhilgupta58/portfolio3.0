@@ -7,6 +7,7 @@ import HeadTag from "../components/HeadTag";
 import Home from "../components/Home";
 import HtmlTag from "../components/HtmlTag";
 import Project from "../components/Project";
+import ScrollDown from "../components/ScrollDown";
 import Skills from "../components/Skills";
 import { useHeroContext } from "./Hero/utils/context";
 
