@@ -14,7 +14,7 @@ export default function Blog() {
       position="relative"
       p={{ base: "10px 0px", xl: "20px 40px" }}
     >
-      <BgTag text="BLOG" left={0} top={0} />
+      <BgTag text="BLOG" left={0} top={-20} />
       <Grid
         mx={{ base: "20px", md: "40px" }}
         templateColumns={{
@@ -23,11 +23,11 @@ export default function Blog() {
           md: "repeat(3, 1fr)",
         }}
         mt={{
-          base: "100px",
-          xs: "150px",
-          sm: "180px",
-          md: "200px",
-          lg: "250px",
+          base: "50px",
+          xs: "70px",
+          sm: "100px",
+          md: "130px",
+          lg: "200px",
         }}
         zIndex={10}
         gridGap={{
