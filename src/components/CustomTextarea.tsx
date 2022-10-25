@@ -14,7 +14,7 @@ export default function CustomTextArea({ ...props }: InputProps) {
         _placeholder={{ color: "#8d8d8d" }}
         border="none"
         p="10 20px"
-        h={"50px"}
+        h={"150px"}
         _focus={{}}
         _active={{}}
         //@ts-ignore

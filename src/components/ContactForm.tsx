@@ -61,8 +61,8 @@ export default function ContactForm() {
         <Flex gap={"10px"} mt="20px" w={"100%"} justifyContent="space-between">
           <Flex />
           <CustomButton
-            h={"50px"}
-            letterSpacing="0.3em"
+            h={{ md: "50px" }}
+            letterSpacing={{ base: "0", md: "0.3em" }}
             onClick={() => ref.current.click()}
             isLoading={loading}
           >

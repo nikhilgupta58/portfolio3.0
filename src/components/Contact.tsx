@@ -42,7 +42,7 @@ export default function Contact() {
         </Text>
         <HtmlTag tag="</p>" ml={{ base: "20px", md: "40px" }} />
         <HtmlTag tag="<form>" ml={{ base: "20px", md: "40px" }} />
-        <Flex ml={{ base: "30px", md: "60px" }} w="80%">
+        <Flex ml={{ base: "30px", md: "60px" }} w={"80%"}>
           <ContactForm />
         </Flex>
         <HtmlTag tag="</form>" ml={{ base: "20px", md: "40px" }} />

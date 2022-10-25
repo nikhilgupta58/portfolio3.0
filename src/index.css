@@ -26,6 +26,9 @@
 }
 
 textarea:focus,
-input:focus {
+input:focus,
+input:enabled,
+input:root,
+input:ital {
   outline: none;
 }
